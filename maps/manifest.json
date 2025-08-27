@@ -1,18 +1,25 @@
 {
     "maps": [
+	 {
+        "name": "Goldbrook",
+        "floors": [
+          { "name": "Upper" }
+        ]
+      },
+
       {
         "name": "Greenwood Day",
         "floors": [
-          { "name": "Main Floor" },
-          { "name": "-1 Floor" }
+          { "name": "Upper" },
+          { "name": "Lower" }
         ]
       },
      
       {
         "name": "Greenwood Night",
         "floors": [
-          { "name": "Main Floor" },
-          { "name": "-1 Floor" }
+          { "name": "Upper" },
+          { "name": "Lower" }
         ]
       },
  {
