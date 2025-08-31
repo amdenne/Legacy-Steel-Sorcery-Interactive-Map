@@ -555,11 +555,11 @@
 	]
     },
     {
-      "name": "White Wolves",
+      "name": "Dire Wolves",
       "color": "#7c8079",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf-elite.png",
-      "desc": "White Wolves",
+      "desc": "Dire Wolves",
       "points": [
         {"x": 822, "y": 462.25},
         { "x": 770.75, "y": 582.5 },
@@ -576,11 +576,11 @@
        ]
     },
     {
-      "name": "Big Elite Wolf",
+      "name": "Elite Dire Wolf",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf-giant.png",
-      "desc": "White Giant Wolf",
+      "desc": "Elite Dire Wolf",
       "points": [
         {"x": 444.25, "y": 565},
 	{"x": 353.375, "y": 793.75}

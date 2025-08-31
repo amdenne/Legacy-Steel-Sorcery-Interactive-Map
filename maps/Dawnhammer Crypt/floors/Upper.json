@@ -464,6 +464,7 @@
       "desc": "Possible spawns for Lodge upgrade items such as Artisan's Tool Kit,Iron Gear,Steel Tongs,Copper Pot,Master Hammer,Anvil etc.",
       "url": "images/Icons/lodge.png",
       "points":[
+	{"x": 707.78125, "y": 767.46875},
 	{"desc":"Small room near spiders, top floor","image":"images/Collectables/lodge763.png","x": 763.1875, "y": 604.59375},
 	{"x": 645.5, "y": 735.8125},
 	{"image":"images/Collectables/lodge791.png","x": 791.875, "y": 762.5}
