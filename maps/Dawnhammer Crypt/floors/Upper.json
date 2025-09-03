@@ -643,6 +643,17 @@
 	{"x": 663.875, "y": 658.5625}
       ]
     },
+	 {
+      "name": "Blood Candle",
+      "color": "#f7d97e",
+      "category": "Collectables",
+      "desc": "Blood Candle",
+      "url": "images/Icons/bloodcandle.png",
+      "points": [
+	{"desc":"Near wall in The Dawnhammers Oath room","x": 692.25, "y": 527.3125}
+      ]
+    },
+
 	{
         "name": "Food",
         "color": "#f7d97e",

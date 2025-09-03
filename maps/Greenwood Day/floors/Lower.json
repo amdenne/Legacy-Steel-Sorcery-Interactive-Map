@@ -341,6 +341,7 @@
       ]
     },
 
+
 	{
       "name": "Lodge Items",
       "color": "#f7d97e",
@@ -348,6 +349,7 @@
       "desc": "Possible spawns for Lodge upgrade items such as Artisan's Tool Kit,Iron Gear,Steel Tongs,Copper Pot,Master Hammer,Anvil etc.",
       "url": "images/Icons/lodge.png",
       "points":[
+	{"x": 757.75, "y": 474.125},
 	{"x": 462.15625, "y": 427.6875},
 	{"x": 575.625, "y": 283},
 	{"x": 623.15625, "y": 305.53125},
@@ -746,6 +748,18 @@
       "url": "images/Icons/worm.png",
       "points": [		
         {"x": 341.6875, "y": 143.5625}
+      ]
+    },
+		
+	{
+      "name": "Serpent Statue",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Possible spawn Serpent Statue",
+      "url": "images/Icons/wishingcoin.png",
+      "points":[
+	{"desc":"In the basement of the church, locked inside Treasure Room", "image":"images/Collectables/serpent864.png","x": 864.8125, "y": 506.1875},
+	{"desc":"In the basement of the cemetery, locked inside Treasure Room", "image":"images/Collectables/serpent667.png","x": 667.84375, "y": 290}
       ]
     },
 

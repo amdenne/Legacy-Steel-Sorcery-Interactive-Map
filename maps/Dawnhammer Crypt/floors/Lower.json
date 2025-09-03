@@ -63,7 +63,7 @@
 	{"x": 444.935, "y": 523.785},
 	{"x": 445.832, "y": 501.338},
 	{"x": 363.125, "y": 462.535},
-	{"x": 570.025, "y": 601.405}
+	{"x": 566.5625, "y": 604.5625}
       ]
     },
 	{
@@ -165,6 +165,7 @@
       "url": "images/Icons/armor-chest.png",
       "desc": "Armor & Weapons",
       "points": [
+	{"x": 431.34375, "y": 394.15625},
 	{"x": 636.28125, "y": 457.40625},
 	{"x": 655, "y": 344.5625},
 	{"x": 627.875, "y": 483.75},
@@ -252,6 +253,7 @@
       "desc": "Skeletal Remains (Armor, Weapons, Resources)",
       "url": "images/Icons/skeletal-remains.png",
       "points": [ 
+	{"x": 681.4375, "y": 593.46875},
 	{"x": 512.34375, "y": 442.21875},
 	{"x": 437.3125, "y": 424.21875},
 	{"x": 419.90625, "y": 424.375},
@@ -328,6 +330,9 @@
       "desc": "Possible spawns for Lodge upgrade items such as Artisan's Tool Kit,Iron Gear,Steel Tongs,Copper Pot,Master Hammer,Anvil etc.",
       "url": "images/Icons/lodge.png",
       "points":[
+	{"x": 420.625, "y": 373.40625},
+	{"x": 678.4375, "y": 610.8125},
+	{"x": 648.40625, "y": 304.96875},
 	{"x": 420.78125, "y": 410.71875},
 	{"x": 555.75, "y": 361.625},
 	{"desc":"Inside Sewer Key extract","image":"images/Collectables/lodge417.png","x": 435.84375, "y": 388.40625},
@@ -354,6 +359,7 @@
 	{"desc":"Bottom floor","image":"images/Collectables/cryptstone631.png","x": 631.4375, "y": 574.34375},
 	{"image":"images/Collectables/cryptstone615.png","x": 615.0625, "y": 650.4375},
 	{"image":"images/Collectables/cryptstone638.png","x": 638.0, "y": 317.09375},
+	{"x": 506.15625, "y": 604.1875},
 		{"image":"images/Collectables/cryptstone565.png","desc":"On the bottom floor","x": 565.0, "y": 367.8125}
       ]
     },
@@ -363,7 +369,11 @@
       "category": "Collectables",
       "desc": "Gravemarrow Root",
       "url": "images/Icons/gravemarrow.png",
-      "points": [	
+      "points": [
+	{"x": 431.90625, "y": 411.5625},
+	{"x": 422.625, "y": 393.09375},	
+	{"x": 687.84375, "y": 614.71875},
+	{"x": 670.1875, "y": 605.78125},
 	{"image":"images/Collectables/gravemarrow574.png","x": 574.28125, "y": 601.5625},
 	{"image":"images/Collectables/gravemarrow460.png","x": 500.21875, "y": 572.3125},
 	{"image":"images/Collectables/gravemarrow461.png","desc":"On the bottom floor next to stairs","x": 442.28125, "y": 606.53125},
@@ -394,7 +404,9 @@
 	{"image":"images/Collectables/gemstones600.png","x": 608.8125, "y": 398.34375},
 	{"image":"images/Collectables/gemstones600.png","x": 606.3125, "y": 398.625},
 	{"x": 632.6875, "y": 371.40625},
-	
+	{"x": 585.40625, "y": 607.0625},
+	{"x": 590.34375, "y": 609.28125},
+	{"x": 580.3125, "y": 610.0625},
 	{"x": 367.78125, "y": 472.25},
 	{"x": 586.125, "y": 557.65625},
 	{"x": 540.25, "y": 362.75},
@@ -427,6 +439,39 @@
 	{"desc": "On the bottom floor","x": 459.28125, "y": 517.625}
       ]
     },
+	{
+      "name": "Phantom Dagger",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Possible spawn for Phantom Dagger",
+      "url": "images/Icons/dagger.png",
+      "points":[
+	{"desc":"In the lower parts of the crypt, locked inside Sewer Extract Room", "image":"images/Collectables/dagger435.png","x": 435.40625, "y": 426.46875}
+      ]
+    },
+	{
+      "name": "Tome of Prophecy",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Possible spawn for Tome of Prophecy",
+      "url": "images/Icons/prophecy.png",
+      "points":[
+	{"desc":"In the middle level of the crypt, locked inside Cipher Stone Extract Room","x": 683.625, "y": 612.65625}
+
+      ]
+    },
+
+	{
+      "name": "Blood Candle",
+      "color": "#f7d97e",
+      "category": "Collectables",
+      "desc": "Blood Candle",
+      "url": "images/Icons/bloodcandle.png",
+      "points": [
+	{"desc":"In Sewer Key Extract final room","x": 415.1875, "y": 372.0625}
+      ]
+    },
+
 {
       "name": "Keys",
       "color": "#f7d97e",
@@ -455,7 +500,8 @@
       "desc": "Exit",
       "url": "images/Icons/exit.png",
       "points": [
-	{"x": 426.15625, "y": 379.71875}
+	{"x": 426.15625, "y": 379.71875},
+	{"desc": "Stone Cipher extract","x": 690.21875, "y": 604.59375}
       ]
     }
 

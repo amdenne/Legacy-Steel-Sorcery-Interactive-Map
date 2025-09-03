@@ -343,6 +343,7 @@
       "url": "images/Icons/armor-chest.png",
       "desc": "Armor & Weapons",
       "points": [
+	{"x": 431.34375, "y": 394.15625},
 	{"desc":"Middle floor corner","x": 653.65625, "y": 457.625},
 	{"desc":"Inside Sewer Key extract","x": 418.9375, "y": 388.21875},
 	{"desc":"On the bottom floor","x": 630.75, "y": 372.90625},
@@ -393,7 +394,8 @@
       "desc": "Locked door that requires a certain key to enter",
       "url": "images/Icons/lockeddoor.png",
       "points":[
-	{"desc": "Requires Sewer Key","x": 440.15625, "y": 442.4375}
+	{"desc": "Requires Sewer Key","x": 440.15625, "y": 442.4375},
+{"desc": "Requires Cipher Stone","x": 657.21875, "y": 604.34375}
 	  ]
     },
  {
@@ -671,6 +673,20 @@
 	{"x": 441.625, "y": 565.46875}
       ]
     },
+ {
+      "name": "Blood Candle",
+      "color": "#f7d97e",
+      "category": "Collectables",
+      "desc": "Blood Candle",
+      "url": "images/Icons/bloodcandle.png",
+      "points": [
+	{"desc":"On candle wall in Hall of Tombs","x": 652.5, "y": 522.875},
+	{"desc":"On candle wall in a corridor","x": 379.8125, "y": 365.1875},
+	{"desc":"Near wall in The Dawnhammers Oath room","x": 692.25, "y": 527.3125},
+	{"desc":"In Sewer Key Extract final room","x": 415.1875, "y": 372.0625}
+      ]
+    },
+
 	{
       "name": "Lodge Items",
       "color": "#f7d97e",
@@ -678,6 +694,9 @@
       "desc": "Possible spawns for Lodge upgrade items such as Artisan's Tool Kit,Iron Gear,Steel Tongs,Copper Pot,Master Hammer,Anvil etc.",
       "url": "images/Icons/lodge.png",
       "points":[
+	{"x": 420.625, "y": 373.40625},
+	{"x": 648.40625, "y": 304.96875},
+	{"x": 666.8125, "y": 548.5625},
 	{"x": 707.78125, "y": 767.46875},
 		{"image":"images/Collectables/lodge392.png","x": 392.125, "y": 565.875},
 	{"desc":"Small room near spiders, top floor","image":"images/Collectables/lodge763.png","x": 763.1875, "y": 604.59375},
@@ -795,7 +814,11 @@
       "category": "Collectables",
       "desc": "Gravemarrow Root",
       "url": "images/Icons/gravemarrow.png",
-      "points": [	
+      "points": [
+	{"x": 431.90625, "y": 411.5625},
+	{"x": 422.625, "y": 393.09375},	
+	{"x": 687.84375, "y": 614.71875},
+	{"x": 670.1875, "y": 605.78125},
 	{"image":"images/Collectables/gravemarrow303.png","x": 303.625, "y": 511.1875},
 	{"image":"images/Collectables/gravemarrow688.png","desc":"Tight corridor in Catacombs of Consecration","x": 685.8051894033027, "y": 608.9073269492657},
 	{"image":"images/Collectables/gravemarrow157.png","x": 160.84375, "y": 505.03125},
@@ -920,6 +943,27 @@
       ]
     },
 	{
+      "name": "Phantom Dagger",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Possible spawn Phantom Dagger",
+      "url": "images/Icons/dagger.png",
+      "points":[
+	{"desc":"In the lower parts of the crypt, locked inside Sewer Extract Room", "image":"images/Collectables/dagger435.png","x": 435.40625, "y": 426.46875}
+      ]
+    },
+	{
+      "name": "Tome of Prophecy",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Possible spawn for Tome of Prophecy",
+      "url": "images/Icons/prophecy.png",
+      "points":[
+	{"desc":"In the middle level of the crypt, locked inside Cipher Stone Extract Room","x": 683.625, "y": 612.65625}
+
+      ]
+    },
+	{
       "name": "Spawn",
       "color": "#ffc0cb",
       "category": "Misc",
@@ -981,7 +1025,8 @@
 	{"x": 104.46875, "y": 500.375},
 	{"x": 426.15625, "y": 379.71875},
 	{"desc":"To exit from here, you need 2 Fresh Player Ears","x": 415.75, "y": 586.5},
-	{"image":"images/Other/stonecipherexit.png","desc":"To exit from here, you need Stone Cipher","x": 658.1875, "y": 604.03125}
+	{"desc": "Stone Cipher extract","x": 690.21875, "y": 604.59375}
+
       ]
     }
 

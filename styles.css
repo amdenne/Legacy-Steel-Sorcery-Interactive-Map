@@ -142,6 +142,10 @@ body {
   height: auto;
 }
 
+.note-container {
+  font-size: 12px;
+}
+
 .mobile-button{
   z-index: 400000;
 }
