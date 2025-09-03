@@ -1292,6 +1292,7 @@
 	{"image":"images/Tools/key238.png","x": 238.0, "y": 449.03125}
       ]
     },
+
 	{
       "name": "Gemstones",
       "color": "#f7d97e",
@@ -2080,6 +2081,37 @@
 	{"x": 764.53125, "y": 358.96875},
 	{"x": 354.75, "y": 586.3125},
 	{"x": 364.9375, "y": 597.0625}
+      ]
+    },
+		
+	{
+      "name": "Serpent Statue",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Possible spawn Serpent Statue",
+      "url": "images/Icons/serpent.png",
+      "points":[
+	{"desc": "In the basement of the church, locked inside Treasure Room", "image":"images/Collectables/serpent864.png","x": 864.8125, "y": 506.1875},
+	{"desc": "In the basement of the cemetery, locked inside Treasure Room", "image":"images/Collectables/serpent667.png","x": 667.84375, "y": 290}
+      ]
+    },
+
+	{
+      "name": "Stonehaven Wishing Coin",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Possible spawns for Stonehaven Wishing Coin",
+      "url": "images/Icons/wishingcoin.png",
+      "points":[
+	{"image":"images/Collectables/wishing264.png","x": 264.5, "y": 434.0625},
+	{"image":"images/Collectables/wishing350.png","x": 350.9375, "y": 539.59375},
+	{"image":"images/Collectables/wishing383.png","x": 383.03125, "y": 591.84375},
+	{"image":"images/Collectables/wishing252.png","x": 252.625, "y": 242.96875},
+	{"image":"images/Collectables/wishing363.png","x": 363.625, "y": 409.8125},
+	{"x": 323.0625, "y": 414.71875},
+	{"image":"images/Collectables/wishing688.png","x": 688.59375, "y": 611.34375},
+	{"x": 500.8125, "y": 266.28125},
+	{"x": 883.6875, "y": 589.53125}
       ]
     },
     {
