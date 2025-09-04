@@ -2103,6 +2103,7 @@
       "desc": "Possible spawns for Stonehaven Wishing Coin",
       "url": "images/Icons/wishingcoin.png",
       "points":[
+	{"image":"images/Collectables/wishing390.png","x": 390.1875, "y": 271.15625},
 	{"image":"images/Collectables/wishing264.png","x": 264.5, "y": 434.0625},
 	{"image":"images/Collectables/wishing350.png","x": 350.9375, "y": 539.59375},
 	{"image":"images/Collectables/wishing383.png","x": 383.03125, "y": 591.84375},
