@@ -20,7 +20,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync build/ s3://legacy-equipment-info-1ia8z9 --delete
+        run: aws s3 sync build/ s3://legacyloot-map-ia158 --delete
       
       # Optional: Invalidate CloudFront cache
       - name: Invalidate CloudFront
