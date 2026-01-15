@@ -1,0 +1,66 @@
+name: Deploy to S3
+on:
+  push:
+    branches: [ master ]
+
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::440330390884:role/deploy-s3-static
+          aws-region: us-east-1
+
+      - name: Deploy to S3
+        run: aws s3 sync build/ s3://legacy-equipment-info-1ia8z9 --delete
+      
+      # Optional: Invalidate CloudFront cache
+      - name: Invalidate CloudFront
+        run: aws cloudfront create-invalidation --distribution-id E16FJ0KI6IHYJ8 --paths "/*"
+      
+      # Discord notification on success
+      - name: Discord notification (Success)
+        if: success()
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: |
+            ✅ **Deployment Successful!** 🚀
+            
+            **Repository:** ${{ github.repository }}
+            **Branch:** ${{ github.ref_name }}
+            **Commit:** [${{ github.sha }}] (https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+            **Author:** ${{ github.actor }}
+            **Message:** 
+            ```
+            ${{ github.event.head_commit.message }}
+            ```
+      
+      # Discord notification on failure
+      - name: Discord notification (Failure)
+        if: failure()
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: |
+            ❌ **Deployment Failed!** 💥
+            
+            **Repository:** ${{ github.repository }}
+            **Branch:** ${{ github.ref_name }}
+            **Commit:** [${{ github.sha }}] (https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+            **Author:** ${{ github.actor }}
+            **Message:** 
+            ```
+            ${{ github.event.head_commit.message }}
+            ```
+   
