@@ -24,7 +24,7 @@ jobs:
       
       # Optional: Invalidate CloudFront cache
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation --distribution-id E16FJ0KI6IHYJ8 --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id E756TXV6IHBXH --paths "/*"
       
       # Discord notification on success
       - name: Discord notification (Success)
