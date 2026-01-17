@@ -56,8 +56,7 @@
       "url": "images/Icons/bandit-elite.png",
       "points": [
 	{"x": 497, "y": 687.25},
-		{"x": 414.25, "y": 205.25},
-	{"x": 133.34375, "y": 356.1875}
+		{"x": 414.25, "y": 205.25}
       ]
     },
 	 {
@@ -305,16 +304,6 @@
 	{"x": 663.03125, "y": 355.96875},
 	{"x": 667.03125, "y": 355.1875}
       ]
-    },
-	    {
-      "name": "Elite Spider",
-      "color": "#f5fced",
-      "category": "Enemies",
-      "url": "images/Icons/mob-spider-elite.png",
-      "desc": "Big Spider",
-      "points": [
-	{"x": 133, "y": 351.5}
-            ]
     },
 	 {
       "name": "Copper",
