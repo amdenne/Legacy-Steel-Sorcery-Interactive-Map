@@ -16,6 +16,7 @@ on:
       - '**.png'
       - '**.webp'
       - '**.avif'
+  workflow_dispatch: 
 jobs:
   build:
     name: calibreapp/image-actions
