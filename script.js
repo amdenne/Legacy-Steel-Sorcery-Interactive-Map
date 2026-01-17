@@ -217,11 +217,11 @@ function toggleHideAll() {
 	document.getElementById('toggle-all').click();
 }
 
-document.getElementById("dev-mode-toggle").addEventListener("click", function () {
-  devMode = !devMode;
-  this.textContent = devMode ? "Dev Mode: ON" : "Dev Mode: OFF";
-  this.classList.toggle("active", devMode);
-});
+//document.getElementById("dev-mode-toggle").addEventListener("click", function () {
+ // devMode = !devMode;
+  //this.textContent = devMode ? "Dev Mode: ON" : "Dev Mode: OFF";
+  //this.classList.toggle("active", devMode);
+//});
 
 document.getElementById("mobile-mode-toggle").addEventListener("click", function () {
   document.getElementById('show-menu').style.display = 'block';
