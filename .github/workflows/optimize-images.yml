@@ -9,7 +9,7 @@ on:
       - '**.avif'
   push:
     branches:
-      - main
+#      - main
       - test-optimize
     paths:
       - '**.jpg'
