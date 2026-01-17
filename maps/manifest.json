@@ -23,13 +23,20 @@
           { "name": "Caves & Dungeons" }
         ]
       },
- {
+      {
         "name": "Dawnhammer Crypt",
         "floors": [
 		{ "name": "All levels" },
 		{ "name": "Upper level" },
  		{ "name": "Middle level" },
  		{ "name": "Lower level" }
+
+        ]
+      },
+	 {
+        "name": "Mor'Thog's Lair - Coming Soon!",
+        "floors": [
+          { "name": "Ground level" }
 
         ]
       }

@@ -41,6 +41,10 @@ function loadMapButtons() {
       currentMap = mapData;
       loadFloorButtons();
     });
+    if (i === 4){
+	button.disabled = true;
+        button.classList.add("disabledButton");
+	} 
     mapButtonsContainer.appendChild(button);
   });
   currentMap = mapsData[1];
