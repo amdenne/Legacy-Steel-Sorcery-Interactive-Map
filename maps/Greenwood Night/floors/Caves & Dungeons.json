@@ -156,6 +156,16 @@
 	{"x": 690.25, "y": 527.1875}
       ]
     },		
+ {
+      "name": "Ogres",
+      "color": "#7c8079",
+      "category": "Bosses",
+      "url": "images/Icons/mob-goblin-boss.png",
+      "desc": "Ogres",
+      "points": [
+        {"x": 750.125, "y": 228.625}
+       ]
+    },
 	 {
       "name": "Spiders",
       "color": "#808080",

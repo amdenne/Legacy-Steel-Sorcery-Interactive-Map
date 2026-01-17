@@ -6,7 +6,7 @@ const map = L.map('map', {
   zoom: -1,
   zoomSnap: 0.5,
   minZoom: 0,
-  maxZoom: 2
+  maxZoom: 3
 });
 
 let bounds = [[0, 0], [1000, 1000]];
