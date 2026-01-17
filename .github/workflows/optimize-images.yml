@@ -10,7 +10,6 @@ on:
   push:
     branches:
       - main
-      - test-optimize
     paths:
       - '**.jpg'
       - '**.jpeg'
