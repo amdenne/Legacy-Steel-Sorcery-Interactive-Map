@@ -38,6 +38,7 @@ jobs:
         with:
           # For non-Pull Requests, run in compressOnly mode and we'll PR after.
           compressOnly: ${{ github.event_name != 'pull_request' }}
+          ignorePaths: 'maps/**/floors/**'
       - name: Create Pull Request
         # If it's not a Pull Request then commit any changes as a new PR.
         if: |
