@@ -3,32 +3,33 @@
 	 {
         "name": "Goldbrook",
         "floors": [
-          { "name": "Upper" }
+          { "name": "Ground level" },
+ { "name": "Caves & Dungeons" }
         ]
       },
 
       {
         "name": "Greenwood Day",
         "floors": [
-          { "name": "Upper" },
-          { "name": "Lower" }
+          { "name": "Ground level" },
+          { "name": "Caves & Dungeons" }
         ]
       },
      
       {
         "name": "Greenwood Night",
         "floors": [
-          { "name": "Upper" },
-          { "name": "Lower" }
+          { "name": "Ground level" },
+          { "name": "Caves & Dungeons" }
         ]
       },
  {
         "name": "Dawnhammer Crypt",
         "floors": [
-		{ "name": "All" },
-		{ "name": "Upper" },
- 		{ "name": "Mid" },
- 		{ "name": "Lower" }
+		{ "name": "All levels" },
+		{ "name": "Upper level" },
+ 		{ "name": "Middle level" },
+ 		{ "name": "Lower level" }
 
         ]
       }

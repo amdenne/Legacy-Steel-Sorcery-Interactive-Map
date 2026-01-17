@@ -7,14 +7,26 @@ body {
   font-family: 'Arial', sans-serif;
   height: 100vh;
   overflow: hidden;
+scrollbar-color: #c1af44 black; 
 }
 
+.clicked{
+	background:#7dbd54;
+	opacity: 0.25;
+        border-radius:50%;
+        border:2px solid #B6E896;
+	left: -2px;	
+	top: -2px;
+        text-align:center;
+}
 
 .left-bar {
-  width: 350px;
+  width: 360px;
   height: 100%;
-  background-color: rgba(46, 32, 8, 0.94);
+  background-image: url('repeatbg.png');
+  background-color: rgba(10,10, 10, 0.94);
   padding: 20px;
+  padding-bottom: 50px;
   box-sizing: border-box;
   position: absolute;
   left: 0;
@@ -23,8 +35,8 @@ body {
   z-index: 200000;
   overflow-y: auto;
   overflow-x: hidden;
-
 }
+
 
 .left-bar::-webkit-scrollbar {
   width: 8px;
@@ -80,18 +92,21 @@ body {
   color: #ecf0f1;
   font-size: 14px;
   cursor: pointer;
-  padding: 3px;
-  border-radius: 4px;
+  padding: 2px;
+  border-radius: 2px;
   transition: background 0.2s ease;
 }
 
 .marker-toggle:hover {
-  background: rgba(73, 47, 5, 0.94);
+  background: rgba(44, 44, 44, 0.94);
 }
 
 .marker-toggle.disabled span {
   text-decoration: line-through;
-  opacity: 0.8;
+}
+
+.marker-toggle.disabled {
+  opacity: 0.3;
 }
 
 .marker-icon {
@@ -110,10 +125,11 @@ body {
 }
 
 .toggle-all-button {
-  background-color: #A0522D;
-  color: #ecf0f1;
+  background-color: #968B2D;
+
+  color: #f7e9d7;
   padding: 10px;
-  border: none;
+  border: 1px solid #c9a23a;
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 10px;
@@ -124,16 +140,30 @@ body {
 }
 
 .toggle-all-button:hover {
-  background-color: #8B4513;
+  background-color: #c9a23a;
+  border: 1px solid #c9a23a;
 }
 
 .toggle-all-button.all-on {
-  background-color: #A0522D;
+  background-color: #968B2D;
+  border: 1px solid #c9a23a;
+}
+
+.toggle-all-button.all-on:hover {
+  background-color: #c9a23a;
+  border: 1px solid #c9a23a;
 }
 
 .toggle-all-button.all-off {
-  background-color: #5C4033;
+  background-color: #968B2D;
+  border: 1px solid #c9a23a;
 }
+
+.toggle-all-button.all-off:hover {
+  background-color: #c9a23a;
+  border: 1px solid #c9a23a;
+}
+
 
 .left-bar .logo {
   display: block;
@@ -152,14 +182,17 @@ body {
 
 .category-section {
   margin-top: 15px;
-  border-top: 1px solid #5C4033;
+  //border-top: 1px solid #5C4033;
 }
 
 .category-section h4 {
   font-size: 18px;
   margin-bottom: 10px;
+padding-bottom:10px;
   color: #ecf0f1;
   font-weight: bold;
+text-align:center;
+border-bottom: 1px solid #5C4033;
 }
 
 
@@ -213,6 +246,7 @@ body {
   background-color: rgba(46, 32, 8, 0.94);
   color: #ecf0f1;
   padding: 10px;
+ margin-bottom: -20px;
   border-radius: 4px;
   font-family: 'Arial', sans-serif;
 
@@ -221,6 +255,14 @@ body {
 .custom-popup h3 {
   margin: 0 0 5px;
   font-size: 18px;
+}
+
+.custom-popup a {
+ text-decoration:none;
+}
+
+.custom-popup a:hover {
+  filter: brightness(180%) !important;
 }
 
 .custom-popup p {
@@ -255,11 +297,11 @@ min-width: 150px;
 
 .leaflet-popup-close-button{
   color: red !important;
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 0px !important;
-  margin-right: -10px;
+  margin-right: -15px;
   text-shadow: #fc0 1px 0 10px !important;
-  font-size: 22px !important;
+  font-size: 26px !important;
 }
 
 .leaflet-popup-close-button:hover{
@@ -267,11 +309,11 @@ min-width: 150px;
 }
 
 .leaflet-marker-icon:hover{
-  filter: brightness(140%) !important;
+  filter: brightness(180%) !important;
 }
 
 .dev-mode-button {
-  background-color: #5C4033;
+  background-color: #686739;
   color: #ecf0f1;
   padding: 10px;
   border: none;
@@ -286,11 +328,13 @@ min-width: 150px;
 }
 
 .dev-mode-button:hover {
-  background-color: #8B4513;
+  background-color: #c1af44;
 }
 
 .dev-mode-button.active {
-  background-color: #A0522D;
+  background-color: #c1af44;
+	  border-color: #fff;
+  color: #fff;
 }
 
 
@@ -304,25 +348,37 @@ min-width: 150px;
   margin-top: 10px;
 }
 
+.layer-button {
+	text-shadow: 1px 1px 2px black;
+    min-width: 200px;
+	flex:1;
+}
+
+#layers-container .layer-button {
+    min-width: 200px;
+      max-width: 200px;
+	flex:1;
+}
+
 #map-buttons-container .layer-button {
   padding: 8px 8px;
   font-size: 14px;
   font-weight: 600;
-  background-color: #5C4033;
+  background-color: #57501A;
   color: #f7e9d7;
-  border: 1px solid #A0522D;
+  border: 1px solid #c9a23a;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 #map-buttons-container .layer-button:hover {
-  background-color: #8B4513;
+  background-color: #c1af44;
   transform: translateY(-1px);
 }
 
 #map-buttons-container .layer-button.active {
-  background-color: #A0522D;
-  border-color: #ffc58f;
+  background-color: #968B2D;
+  border-color: #fff;
   color: #fff;
 }
 
@@ -340,22 +396,22 @@ min-width: 150px;
   padding: 6px 14px;
   font-size: 13px;
   font-weight: 500;
-  background-color: #5C4033;
+  background-color: #57501A;
   color: #fff3e0;
-  border: 1px solid #5C4033;
+  border: 1px solid #c9a23a;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 #layers-container .layer-button:hover {
-  background-color: #8B4513;
+  background-color: #c1af44;
   transform: translateY(-1px);
 }
 
 #layers-container .layer-button.active {
-  background-color: #A0522D;
-  border-color: #ffc58f;
+  background-color: #968B2D;
+  border-color: #fff;
   color: #ffffff;
 }
 
@@ -367,3 +423,22 @@ min-width: 150px;
   background-color: #6b3f1f; /* A slightly darker shade to indicate selection */
   border: 2px solid #A0522D;   /* Optional: adds extra visual emphasis */
 }
+
+.leaflet-top {
+	margin-left: 5px;
+}
+
+.leaflet-bar a {
+	background-color: #c1af44;
+	color: #000;
+	}
+
+.leaflet-bar a.leaflet-disabled {
+	background-color: #c1af44;
+	color: #000;
+}
+
+.leaflet-disabled{
+	opacity: 0.5;
+}
+

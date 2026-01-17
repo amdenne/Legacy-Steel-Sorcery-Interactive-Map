@@ -5,8 +5,8 @@ const map = L.map('map', {
   center: [0, 0],
   zoom: -1,
   zoomSnap: 0.5,
-  minZoom: -1,
-  maxZoom: 5
+  minZoom: 0,
+  maxZoom: 2
 });
 
 let bounds = [[0, 0], [1000, 1000]];
@@ -31,9 +31,10 @@ fetch("maps/manifest.json")
 function loadMapButtons() {
   mapsData.forEach((mapData, i) => {
     const button = document.createElement("button");
-    button.className = "layer-button";
+    button.className = "layer-button"; 
     button.textContent = mapData.name;
-    if (i === 0) button.classList.add("active");
+
+    if (i === 1) button.classList.add("active");
     button.addEventListener("click", () => {
       document.querySelectorAll("#map-buttons-container .layer-button").forEach(b => b.classList.remove("active"));
       button.classList.add("active");
@@ -42,7 +43,7 @@ function loadMapButtons() {
     });
     mapButtonsContainer.appendChild(button);
   });
-  currentMap = mapsData[0];
+  currentMap = mapsData[1];
   loadFloorButtons();
 }
 
@@ -70,7 +71,7 @@ function loadFloor(floorName) {
   markerLayers = {};
   document.getElementById("categories-container").innerHTML = "";
 
-  const imagePath = `maps/${currentMap.name}/floors/${floorName}.jpg`;
+  const imagePath = `maps/${currentMap.name}/floors/${floorName}.png`;
   const dataPath = `maps/${currentMap.name}/floors/${floorName}.json?v=${timestamp}`;
 
   if (backgroundOverlay) map.removeLayer(backgroundOverlay);
@@ -84,8 +85,7 @@ function loadFloor(floorName) {
     .catch(err => console.error("Failed to load floor JSON", err));
 }
 
-function loadMarkers(data) {
-	
+function loadMarkers(data) {	
   data.markers.forEach(function (markerData) {
     var categoriesContainer = document.getElementById('categories-container');
 
@@ -108,13 +108,13 @@ function loadMarkers(data) {
 
     var buttonsContainer = categorySection.querySelector('.marker-buttons');
 
-    var iconUrl = markerData.url ? `maps/${currentMap.name}/${markerData.url}` : `maps/${currentMap.name}/images/Icons/default.png`;
+    var iconUrl = markerData.url ? `maps/${markerData.url}` : `maps/Icons/default.png`;
 
     var button = document.createElement('button');
     button.className = "marker-toggle";
     button.dataset.markerName = markerData.name;
     button.dataset.visible = "true";
-    button.innerHTML = `<img src="${iconUrl}" alt="${markerData.name} icon" class="marker-icon" /><span>${markerData.name}</span>`;
+    button.innerHTML = `<img src="${iconUrl}" alt="${markerData.name} icon" class="marker-icon" /><span style="text-align: left;">${markerData.name}</span>`;
 
     button.addEventListener('click', function () {
       var isVisible = button.dataset.visible === "true";
@@ -133,17 +133,15 @@ function loadMarkers(data) {
     const markerParam = urlParams.get('marker');
     if (markerParam) {
       filterMarkersByName(markerParam);
-    }else{
-	checkVisible();	
-}
+    }
   });
-//
-
+  checkVisible();	
 }
 
 function addMarker(markerData, point) {
   var description = point.desc || markerData.desc;
-  var iconUrl = markerData.url ? `maps/${currentMap.name}/${markerData.url}` : `maps/${currentMap.name}/images/Icons/default.png`;
+  var iconUrl = markerData.url ? `maps/${markerData.url}` : `maps/Icons/default.png`;
+
   var markerIcon = L.icon({
     iconUrl: iconUrl,
     iconSize: [26, 26],
@@ -155,16 +153,37 @@ function addMarker(markerData, point) {
     icon: markerIcon
   }).addTo(map);
 
-  var popupContent = `
+   var popupContent = `
     <div class="custom-popup">
-      <h3>${markerData.name}</h3>
-      <p>${description}</p>
+      <h3 style='text-align:center;'>${markerData.name}</h3>
+      <p style='text-align:center;'>${description}</p>
       ${point.image ? `<img src="maps/${currentMap.name}/${point.image}" alt="${markerData.name} image" class="popup-image" />` : ''}
-      <p class="popup-coords">Coordinates: (${point.x.toFixed(2)}, ${point.y.toFixed(2)})</p>
     </div>
   `;
 
   marker.bindPopup(popupContent);
+        marker.on('click', function (e) {
+            this.openPopup();
+        });
+        //marker.on('mouseout', function (e) {
+       //     this.closePopup();
+       // });
+	
+    /*marker.on("click", function (e) {
+	var tempArr = Array.from(this._icon.classList);
+	var alreadyClicked = false;
+	for (var i = 0; i < tempArr.length; i++) {
+		if(tempArr[i] == "clicked"){
+			alreadyClicked = true;
+		}
+  	  }
+	if(!alreadyClicked){
+		this._icon.classList.add('clicked');
+	}else{
+		this._icon.classList.remove('clicked');
+	}
+
+        });*/
 
   if (!markerLayers[markerData.name]) {
     markerLayers[markerData.name] = [];
@@ -178,7 +197,7 @@ function toggleMarkers(name, isVisible) {
     markers.forEach(function (marker) {
       isVisible ? marker.addTo(map) : map.removeLayer(marker);
     });
-  }
+   }
 }
 
 function filterMarkersByName(targetName) {
@@ -216,20 +235,46 @@ document.getElementById("show-menu").addEventListener("click", function () {
   document.getElementById('mobile-mode-toggle').parentNode.style.display = 'block';
 });
 
-document.getElementById('search-bar').addEventListener('input', function(e) {
-  var searchText = e.target.value.toLowerCase();
+function checkSearch(value) {
+  var searchText = value.toLowerCase();
   var buttons = document.querySelectorAll('.marker-toggle');
+  var categoriesList = [];
+  var categoriesFound = [];
+
   buttons.forEach(function(button) {
+    document.getElementById(button.closest('.category-section').id).style.display = 'block';
+    var categoryFound = false;
     var markerName = button.dataset.markerName.toLowerCase();
     var categoryName = button.closest('.category-section').id.toLowerCase(); 
+    var categoryId = button.closest('.category-section').id;
+    
+    if(!categoriesList.includes(categoryId)){
+	categoriesList.push(categoryId);
+     }
     if (markerName.includes(searchText) || categoryName.includes(searchText)) {
-      button.style.visibility = 'visible';
+      categoriesFound.push(categoryId);
+      button.style.display = 'flex';
       button.style.height = 'auto';
     } else {
-      button.style.visibility = 'hidden';
+      button.style.display = 'none';
       button.style.height = '0';
     }
-  });
+  }); //buttons for each end
+  
+  categoriesFound.forEach(function(e) {
+	var index = categoriesList.indexOf(e);
+	if (index !== -1) {
+ 	 categoriesList.splice(index, 1);
+	}
+   }); //remove found categories from main list
+
+   categoriesList.forEach(function(e) {
+      document.getElementById(e).style.display = 'none';
+   });
+}
+
+document.getElementById('search-bar').addEventListener('input', function(e) {
+  checkSearch(document.getElementById('search-bar').value);
 });
 
 function checkVisible() {
@@ -239,6 +284,10 @@ function checkVisible() {
     button.classList.toggle("disabled", allVisible);
     toggleMarkers(name, !allVisible);
   });
+	if(document.getElementById('search-bar').value.length > 0){
+		checkSearch(document.getElementById('search-bar').value);
+	}
+
 }
 
 document.getElementById('toggle-all').addEventListener('click', function () {
@@ -249,7 +298,7 @@ document.getElementById('toggle-all').addEventListener('click', function () {
     button.classList.toggle("disabled", allVisible);
     toggleMarkers(name, !allVisible);
   });
-  this.textContent = allVisible ? "Show All Markers" : "Hide All Markers";
+  this.textContent = allVisible ? "Show Markers" : "Hide Markers";
   this.classList.toggle("all-on", !allVisible);
   this.classList.toggle("all-off", allVisible);
 });
