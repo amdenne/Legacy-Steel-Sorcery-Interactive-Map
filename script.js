@@ -55,8 +55,16 @@ function updateURLState() {
 
   const url = new URL(window.location);
   url.searchParams.set('s', base32State);
-  postMessage(base32State);
   window.history.replaceState({}, '', url);
+
+  // Notify parent window if we are in an iframe
+  if (window.parent !== window) {
+    window.parent.postMessage({
+      type: 'MAP_STATE_UPDATE',
+      state: base32State,
+      url: url.toString()
+    }, '*');
+  }
 }
 
 function decodeURLState() {
