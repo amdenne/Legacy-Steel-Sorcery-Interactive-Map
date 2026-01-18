@@ -386,7 +386,8 @@
 	{"x": 463.1875, "y": 623.78125},
 	{"x": 542.875, "y": 580.71875},
 	{"x": 643.375, "y": 563.71875},
-	{"x": 892.875, "y": 580.34375}
+	{"x": 892.875, "y": 580.34375},
+	{"x": 603.875, "y": 476.375}
 	]
     },
 	{
@@ -816,7 +817,7 @@
       "color": "#f7d97e",
       "category": "Containers",
       "desc": "Usually contains a backpack, various foods and resources",
-      "url": "images/Icons/chest-herb.png",
+      "url": "images/Icons/chest-adventurer.png",
       "points": [
 	{"x": 377.03125, "y": 394.21875},
 	{"x": 880.65625, "y": 602.40625},
@@ -1162,6 +1163,7 @@
       "points":[
 	{"image":"images/Tools/lodge748.png","x": 748.40625, "y": 234.75},
 	{"x": 696.375, "y": 522.6875},
+	{"x":255.375,"y":225.375},
 	{"x": 312.53125, "y": 632.125},
 	{"x": 934.6875, "y": 556.96875},
 	{"x": 364.96875, "y": 598.5625},
@@ -1393,26 +1395,6 @@
 	{"x": 725.0, "y": 140.8125}      
 	]
     },
-{
-      "name": "Spectral Diamond",
-      "color": "#f7d97e",
-      "category": "Dropped Items",
-      "desc": "Spectral Diamond",
-      "url": "images/Icons/diamond.png",
-      "points": [
-		{"image":"images/Collectables/diamond.png","x": 854.25, "y": 412}
-	]
-    },
-{
-      "name": "Bandit's Motherlode",
-      "color": "#f7d97e",
-      "category": "Dropped Items",
-      "desc": "Bandit's Motherlode",
-      "url": "images/Icons/motherlode.png",
-      "points": [
-		{"image":"images/Collectables/motherlode.png","x": 521, "y": 231.75}
-	]
-    },
     {
       "name": "Oak or Birch",
       "color": "#228B22",
@@ -1492,11 +1474,10 @@
 	{"x": 272.03125, "y": 222.375},
 	{"x": 502.90625, "y": 543.65625},
 	{"x": 680.25, "y": 204.6875},
-	{"x": 758.71875, "y": 502.5},
+
 	        { "x": 722.19, "y": 527.13 },
-	{"x": 716.6875, "y": 512.375},
 	{"image":"images/Plants/MapleTree765.png","x": 765, "y": 193},
-        {"image":"images/Plants/MapleTree299.png","x": 299.0, "y": 617.625},
+
         {"image":"images/Plants/MapleTree790.png","x": 790.0, "y": 338.125},
         {"x": 805, "y": 365.25},
         { "x": 710.30, "y": 135.56 },
@@ -1514,7 +1495,9 @@
       "category": "Trees",
       "desc": "Birch, Oak, Maple or Ironwood",
       "points": [
-
+	{"x": 758.71875, "y": 502.5},
+        {"x": 299.0, "y": 617.625},
+		{"x": 716.6875, "y": 512.375},
    		{"x": 411.34375, "y": 546.375},
 	{"x": 430.1875, "y": 655.46875},
 	{"x": 752.40625, "y": 170.3125},
@@ -1825,22 +1808,6 @@
       ]
     },
 
-{
-      "name": "Gold Coins",
-      "color": "#f7d97e",
-      "category": "Collectables",
-      "url": "images/Icons/coins.png",
-      "desc":"Pile of Gold Coins",
-      "points": [	
-	{"x": 724.25, "y": 140.78125},
-	{"x": 614.3125, "y": 243.78125},
-	{"x": 588.15625, "y": 247.0625},
-	{"x": 591.125, "y": 260.78125},
-	{"x": 592.40625, "y": 255.875},
-	{"x": 660.46875, "y": 447.21875},
-	{"x": 644.125, "y": 464.0625}
-      ]
-    },
 
 {
       "name": "Lunar Stone",
@@ -2110,7 +2077,7 @@
 	"name": "Breakables",
 	"color": "#ffc0cb",
 	"category": "Misc",
-	"desc": "Boxes and barrels you can break",
+	"desc": "Boxes and barrels you can break for loot",
 	"url": "images/Icons/crate.png",
 	"points": [
 	{"x": 254.78125, "y": 232.78125},
@@ -2265,7 +2232,7 @@
       "name": "Priest Altar",
       "color": "#ffc0cb",
       "category": "Misc",
-      "url": "images/Icons/altar.png",
+      "url": "images/Icons/priestaltar.png",
       "desc": "Priest Altar",
       "points": [
         {"x": 628, "y": 386},
@@ -2275,11 +2242,28 @@
         {"x": 599, "y": 480.9375}
       ]
     },
+{
+      "name": "Gold Coins",
+      "color": "#f7d97e",
+      "category": "Dropped Items",
+      "url": "images/Icons/coins.png",
+      "desc":"Pile of Gold Coins",
+      "points": [	
+	{"x": 724.25, "y": 140.78125},
+	{"x": 614.3125, "y": 243.78125},
+	{"x": 588.15625, "y": 247.0625},
+	{"x": 591.125, "y": 260.78125},
+	{"x": 592.40625, "y": 255.875},
+	{"x": 660.46875, "y": 447.21875},
+	{"x": 644.125, "y": 464.0625}
+      ]
+    },
+
     {
       "name": "Hunter Altar",
       "color": "#ffc0cb",
       "category": "Misc",
-      "url": "images/Icons/altar.png",
+      "url": "images/Icons/hunteraltar.png",
       "desc": "Hunter Altar",
       "points": [
         {"x": 530.5, "y": 541.375},
@@ -2288,6 +2272,59 @@
         {"x": 776, "y": 575},
 	{"x": 365.92, "y": 614.12}
       ]
+    },
+	{
+      "name": "Blackiron Pan",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Blackiron Pan",
+      "url": "images/Icons/blackiron.png",
+      "points": [
+	{"image":"images/Collectables/blackiron1.png","x": 256.125, "y": 233.5},
+	{"image":"images/Collectables/blackiron2.png","x": 883.75, "y": 611.25}
+	]
+    },
+
+{
+      "name": "Grimm's Lost Recipe",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Grimm's Lost Recipe",
+      "url": "images/Icons/recipe.png",
+      "points": [
+	{"image":"images/Collectables/recipe.png","x": 727.375, "y": 346.75}
+	]
+    },
+{
+      "name": "Royal Ladle",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Royal Ladle",
+      "url": "images/Icons/ladle.png",
+      "points": [
+	{"image":"images/Collectables/ladle.png","x": 677.25, "y": 455.625}
+	]
+    },
+
+{
+      "name": "Spectral Diamond",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Spectral Diamond",
+      "url": "images/Icons/diamond.png",
+      "points": [
+		{"image":"images/Collectables/diamond.png","x": 854.25, "y": 412}
+	]
+    },
+{
+      "name": "Bandit's Motherlode",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Bandit's Motherlode",
+      "url": "images/Icons/motherlode.png",
+      "points": [
+		{"image":"images/Collectables/motherlode.png","x": 521, "y": 231.75}
+	]
     }
   ]
 }

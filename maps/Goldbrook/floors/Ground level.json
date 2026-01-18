@@ -499,10 +499,10 @@
       ]
     },
 	{
-      "name": "Fish",
+      "name": "Fishing",
       "color": "#f7d97e",
       "category": "Collectables",
-      "desc": "Fishing pool",
+      "desc": "Fishing pool for various fish",
       "url": "images/Icons/fishing.png",
       "points": [
 	{"x": 648.71875, "y": 173.03125},
@@ -699,7 +699,7 @@
       "color": "#f7d97e",
       "category": "Containers",
       "desc": "Usually contains a backpack, various foods and resources",
-      "url": "images/Icons/chest-herb.png",
+      "url": "images/Icons/chest-adventurer.png",
       "points": [
 	{"x": 643.78125, "y": 699.21875},
 	{"x": 539.1875, "y": 555.0625},
@@ -786,7 +786,7 @@
       "name": "Priest Altar",
       "color": "#ffc0cb",
       "category": "Misc",
-      "url": "images/Icons/altar.png",
+      "url": "images/Icons/priestaltar.png",
       "desc": "Priest Altar",
       "points": [
 	{"x": 531.09375, "y": 171.125},
@@ -798,7 +798,7 @@
       "name": "Hunter Altar",
       "color": "#ffc0cb",
       "category": "Misc",
-      "url": "images/Icons/altar.png",
+      "url": "images/Icons/hunteraltar.png",
       "desc": "Hunter Altar",
       "points": [
 	{"x": 320.34375, "y": 670.75},

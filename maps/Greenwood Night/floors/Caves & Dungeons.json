@@ -459,7 +459,7 @@
 	"name": "Breakables",
 	"color": "#ffc0cb",
 	"category": "Misc",
-	"desc": "Boxes and barrels you can break",
+	"desc": "Boxes and barrels you can break for loot",
 	"url": "images/Icons/crate.png",
 	"points": [
 	{"x": 285.59375, "y": 704.59375},
@@ -551,7 +551,7 @@
       "name": "Priest Altar",
       "color": "#ffc0cb",
       "category": "Misc",
-      "url": "images/Icons/altar.png",
+      "url": "images/Icons/priestaltar.png",
       "desc": "Priest Altar",
       "points": [
 	{"x": 391.1875, "y": 778.1875},
@@ -674,7 +674,7 @@
 {
       "name": "Gold Coins",
       "color": "#f7d97e",
-      "category": "Collectables",
+      "category": "Dropped Items",
       "url": "images/Icons/coins.png",
       "desc":"Pile of Gold Coins",
       "points": [
@@ -794,7 +794,7 @@
       "color": "#f7d97e",
       "category": "Containers",
       "desc": "Adventurer Bag",
-      "url": "images/Icons/chest-herb.png",
+      "url": "images/Icons/chest-adventurer.png",
       "points": [	
 	{"x": 544.375, "y": 543.53125},
 	{"x": 380.53125, "y": 631.25},

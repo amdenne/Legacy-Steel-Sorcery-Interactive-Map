@@ -312,6 +312,10 @@ min-width: 150px;
   filter: brightness(180%) !important;
 }
 
+.leaflet-marker-icon{
+filter: drop-shadow(5px 5px 5px #000);
+}
+
 .dev-mode-button {
   background-color: #686739;
   color: #ecf0f1;

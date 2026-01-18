@@ -270,21 +270,7 @@
 	{"desc":"Inside Sewer Key Extract","x": 404.6875, "y": 432.21875}
       ]
     },
-		 {
-      "name": "Gold Coins",
-      "color": "#f7d97e",
-      "category": "Collectables",
-      "url": "images/Icons/coins.png",
-      "desc":"Pile of Gold Coins",
-      "points": [
-	{"x": 572.375, "y": 698.5},
-	{"desc":"Inside Sewer Key Extract","x": 433.6875, "y": 423.90625},
-	{"desc":"Inside Sewer Key Extract","x": 415.4375, "y": 425.625},
-	{"desc":"Inside Sewer Key Extract","x": 418.84375, "y": 385},
-	{"desc":"Inside Sewer Key Extract","x": 433.71875, "y": 371.25},
-	{"x": 586.53125, "y": 602.03125}      
-]
-    },
+		
 	{
       "name": "Mushrooms",
       "color": "#f7d97e",
@@ -418,7 +404,7 @@
       "color": "#f7d97e",
       "category": "Containers",
       "desc": "Adventurer Bag",
-      "url": "images/Icons/chest-herb.png",
+      "url": "images/Icons/chest-adventurer.png",
       "points": [
 	{"x": 514.96875, "y": 449.9375}
       ]
@@ -493,6 +479,21 @@
       "points": [
 	{"desc": "On the bottom floor","x": 486.65625, "y": 438.34375}
       ]
+    },
+ {
+      "name": "Gold Coins",
+      "color": "#f7d97e",
+      "category": "Dropped Items",
+      "url": "images/Icons/coins.png",
+      "desc":"Pile of Gold Coins",
+      "points": [
+	{"x": 572.375, "y": 698.5},
+	{"desc":"Inside Sewer Key Extract","x": 433.6875, "y": 423.90625},
+	{"desc":"Inside Sewer Key Extract","x": 415.4375, "y": 425.625},
+	{"desc":"Inside Sewer Key Extract","x": 418.84375, "y": 385},
+	{"desc":"Inside Sewer Key Extract","x": 433.71875, "y": 371.25},
+	{"x": 586.53125, "y": 602.03125}      
+]
     },
 	 {
       "name": "Exit",

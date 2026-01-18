@@ -447,7 +447,7 @@
 	"name": "Breakables",
 	"color": "#ffc0cb",
 	"category": "Misc",
-	"desc": "Boxes and barrels you can break",
+	"desc": "Boxes and barrels you can break for loot",
 	"url": "images/Icons/crate.png",
 	"points": [
 	{"x": 752.84375, "y": 492.625},
@@ -512,7 +512,7 @@
 	{
       "name": "Gold Coins",
       "color": "#f7d97e",
-      "category": "Collectables",
+      "category": "Dropped Items",
       "url": "images/Icons/coins.png",
       "desc":"Pile of Gold Coins",
       "points": [	
@@ -547,7 +547,7 @@
       "name": "Priest Altar",
       "color": "#ffc0cb",
       "category": "Misc",
-      "url": "images/Icons/altar.png",
+      "url": "images/Icons/priestaltar.png",
       "desc": "Priest Altar",
       "points": [
 	{"x": 391.1875, "y": 778.1875},
@@ -731,7 +731,7 @@
       "color": "#f7d97e",
       "category": "Containers",
       "desc": "Adventurer Bag",
-      "url": "images/Icons/chest-herb.png",
+      "url": "images/Icons/chest-adventurer.png",
       "points": [
 	{"x": 380.53125, "y": 631.25},
 	{"x": 568.90625, "y": 359.71875},
@@ -756,7 +756,7 @@
       "color": "#f7d97e",
       "category": "Quest Items",
       "desc": "Possible spawn Serpent Statue",
-      "url": "images/Icons/wishingcoin.png",
+      "url": "images/Icons/serpent.png",
       "points":[
 	{"desc":"In the basement of the church, locked inside Treasure Room", "image":"images/Collectables/serpent864.png","x": 864.8125, "y": 506.1875},
 	{"desc":"In the basement of the cemetery, locked inside Treasure Room", "image":"images/Collectables/serpent667.png","x": 667.84375, "y": 290}

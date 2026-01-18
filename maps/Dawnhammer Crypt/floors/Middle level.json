@@ -269,20 +269,7 @@
 	{"x": 159.53125, "y": 571.8125}
       ]
     },
-	 {
-      "name": "Gold Coins",
-      "color": "#f7d97e",
-      "category": "Collectables",
-      "url": "images/Icons/coins.png",
-      "desc":"Pile of Gold Coins",
-      "points": [
-	{"x": 177.875, "y": 535.6875},
-	{"x": 178.96875, "y": 529.78125},
-	{"x": 135.46875, "y": 442.25},
-	{"x": 142.5, "y": 442.125},
-	{"x": 262.4375, "y": 592.90625}
-      ]
-    },
+	 
 	{
       "name": "Mushrooms",
       "color": "#f7d97e",
@@ -483,12 +470,25 @@
 	{"x": 300.21875, "y": 286.9375}
       ]
     },
-
+{
+      "name": "Gold Coins",
+      "color": "#f7d97e",
+      "category": "Dropped Items",
+      "url": "images/Icons/coins.png",
+      "desc":"Pile of Gold Coins",
+      "points": [
+	{"x": 177.875, "y": 535.6875},
+	{"x": 178.96875, "y": 529.78125},
+	{"x": 135.46875, "y": 442.25},
+	{"x": 142.5, "y": 442.125},
+	{"x": 262.4375, "y": 592.90625}
+      ]
+    },
 	{
       "name": "Priest Altar",
       "color": "#ffc0cb",
       "category": "Misc",
-      "url": "images/Icons/altar.png",
+      "url": "images/Icons/priestaltar.png",
       "desc": "Priest Altar",
       "points": [
      {"x": 312.15625, "y": 433.375}

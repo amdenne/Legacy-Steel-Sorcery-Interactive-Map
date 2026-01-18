@@ -368,29 +368,7 @@
 	{"x": 669.09375, "y": 365.125}
       ]
     },
-	 {
-      "name": "Gold Coins",
-      "color": "#f7d97e",
-      "category": "Collectables",
-      "url": "images/Icons/coins.png",
-      "desc":"Pile of Gold Coins",
-      "points": [
-	{"x": 752.625, "y": 546.1875},
-	{"x": 732.21875, "y": 712.78125},
-	{"x": 719.53125, "y": 676.46875},
-	{"x": 173.875, "y": 478.625},
-	{"desc":"Top floor","x": 825.15, "y": 371.71},
-	{"x": 742.95, "y": 587.71},	
-	{"x": 686, "y": 528.25},
-	{"x": 479.625, "y": 509.875},
-	{"x": 529.465, "y": 372.81},
-	{"x": 757.46, "y": 656.11},
-	{"x": 768.93, "y": 651.97},
-	{"x": 790.15, "y": 649.29},
-	{"x": 686, "y": 528.25},
-	{"x": 749.5, "y": 546.875}
-      ]
-    },
+	
 	{
       "name": "Mushrooms",
       "color": "#f7d97e",
@@ -603,7 +581,7 @@
       "color": "#f7d97e",
       "category": "Containers",
       "desc": "Adventurer Bag",
-      "url": "images/Icons/chest-herb.png",
+      "url": "images/Icons/chest-adventurer.png",
       "points": [
 	{"x": 187.96875, "y": 559.03125}
       ]
@@ -637,7 +615,7 @@
       "name": "Priest Altar",
       "color": "#ffc0cb",
       "category": "Misc",
-      "url": "images/Icons/altar.png",
+      "url": "images/Icons/priestaltar.png",
       "desc": "Priest Altar",
       "points": [
 	{"x": 663.875, "y": 658.5625}
@@ -674,6 +652,29 @@
 	{"x": 179.78125, "y": 514.78125},
 	{"x": 517.78125, "y": 483.1875},
 	{"x": 472.9375, "y": 483.71875}
+      ]
+    },
+ {
+      "name": "Gold Coins",
+      "color": "#f7d97e",
+      "category": "Dropped Items",
+      "url": "images/Icons/coins.png",
+      "desc":"Pile of Gold Coins",
+      "points": [
+	{"x": 752.625, "y": 546.1875},
+	{"x": 732.21875, "y": 712.78125},
+	{"x": 719.53125, "y": 676.46875},
+	{"x": 173.875, "y": 478.625},
+	{"desc":"Top floor","x": 825.15, "y": 371.71},
+	{"x": 742.95, "y": 587.71},	
+	{"x": 686, "y": 528.25},
+	{"x": 479.625, "y": 509.875},
+	{"x": 529.465, "y": 372.81},
+	{"x": 757.46, "y": 656.11},
+	{"x": 768.93, "y": 651.97},
+	{"x": 790.15, "y": 649.29},
+	{"x": 686, "y": 528.25},
+	{"x": 749.5, "y": 546.875}
       ]
     },
 		 {
