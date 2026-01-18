@@ -1,5 +1,4 @@
 // script.js
-
 const map = L.map('map', {
   crs: L.CRS.Simple,
   center: [0, 0],
@@ -17,29 +16,104 @@ let timestamp = new Date().getTime();
 let currentMap = null;
 let mapsData = [];
 let allVisible = false;
+let isInitializing = false;
 
 const mapButtonsContainer = document.getElementById("map-buttons-container");
 const layersContainer = document.getElementById("layers-container");
+const BASE32_ALPHABET = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
 
-fetch("maps/manifest.json")
-  .then(res => res.json())
-  .then(data => {
-    mapsData = data.maps;
-    loadMapButtons();
+function updateURLState() {
+  if (isInitializing) return;
+
+  // Marker bitmask: we only care about markers on the current floor
+  const mapIdx = mapsData.indexOf(currentMap);
+  const floorIdx = currentMap ? currentMap.floors.findIndex(f => f.name === document.querySelector("#layers-container .active")?.textContent) : 0;
+
+  let combined = BigInt(mapIdx & 0x1F);
+  combined |= (BigInt(floorIdx & 0x1F) << 5n);
+
+  // Use a stable sort to ensure bitmask is consistent regardless of DOM order
+  const buttons = Array.from(document.querySelectorAll('.marker-toggle'));
+  buttons.sort((a, b) => a.dataset.markerName.localeCompare(b.dataset.markerName));
+
+  let markerBitmask = 0n;
+  buttons.forEach((btn, idx) => {
+    if (btn.dataset.visible === "true") {
+      markerBitmask |= (1n << BigInt(idx));
+    }
   });
 
+  combined |= (BigInt(markerBitmask) << 10n);
+
+  let base32State = "";
+  let temp = combined;
+  if (temp === 0n) base32State = BASE32_ALPHABET[0];
+  while (temp > 0n) {
+    base32State = BASE32_ALPHABET[Number(temp & 31n)] + base32State;
+    temp >>= 5n;
+  }
+
+  const url = new URL(window.location);
+  url.searchParams.set('s', base32State);
+  window.history.replaceState({}, '', url);
+}
+
+function decodeURLState() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const s = urlParams.get('s');
+  if (!s) return null;
+
+  let combined = 0n;
+  for (let i = 0; i < s.length; i++) {
+    const val = BigInt(BASE32_ALPHABET.indexOf(s[i].toUpperCase()));
+    combined = (combined << 5n) | val;
+  }
+
+  const mapIdx = Number(combined & 31n);
+  const floorIdx = Number((combined >> 5n) & 31n);
+  const markerBitmask = combined >> 10n;
+
+  return { mapIdx, floorIdx, markerBitmask };
+}
+
+async function init() {
+  try {
+    isInitializing = true;
+    const response = await fetch("maps/manifest.json");
+    if (!response.ok) throw new Error(`Failed to fetch manifest: ${response.statusText}`);
+    
+    const data = await response.json();
+    mapsData = data.maps;
+    
+    const urlState = decodeURLState();
+    if (urlState && mapsData[urlState.mapIdx]) {
+      currentMap = mapsData[urlState.mapIdx];
+    } else {
+      currentMap = mapsData[1];
+    }
+
+    loadMapButtons();
+    isInitializing = false;
+  } catch (error) {
+    console.error("Initialization error:", error);
+    isInitializing = false;
+  }
+}
+
 function loadMapButtons() {
+  mapButtonsContainer.innerHTML = ""; // Clear existing
   mapsData.forEach((mapData, i) => {
     const button = document.createElement("button");
     button.className = "layer-button"; 
     button.textContent = mapData.name;
 
-    if (i === 1) button.classList.add("active");
+    if (currentMap === mapData) button.classList.add("active");
     button.addEventListener("click", () => {
       document.querySelectorAll("#map-buttons-container .layer-button").forEach(b => b.classList.remove("active"));
       button.classList.add("active");
       currentMap = mapData;
       loadFloorButtons();
+      updateURLState();
     });
     if (i === 4){
 	button.disabled = true;
@@ -47,29 +121,43 @@ function loadMapButtons() {
 	} 
     mapButtonsContainer.appendChild(button);
   });
-  currentMap = mapsData[1];
   loadFloorButtons();
 }
 
 function loadFloorButtons() {
+  const urlState = decodeURLState();
   layersContainer.innerHTML = "";
   currentMap.floors.forEach((floor, i) => {
     const button = document.createElement("button");
     button.className = "layer-button";
     button.textContent = floor.name;
-    if (i === 0) button.classList.add("active");
+    
+    let isActive = i === 0;
+    if (urlState && urlState.mapIdx === mapsData.indexOf(currentMap) && urlState.floorIdx === i) {
+      isActive = true;
+    }
+    
+    if (isActive) {
+       // Clear other actives if we are setting this one from URL
+       document.querySelectorAll("#layers-container .layer-button").forEach(b => b.classList.remove("active"));
+       button.classList.add("active");
+    }
+
     button.addEventListener("click", () => {
       document.querySelectorAll("#layers-container .layer-button").forEach(b => b.classList.remove("active"));
       button.classList.add("active");
       loadFloor(floor.name);
+      updateURLState();
     });
     layersContainer.appendChild(button);
   });
-  loadFloor(currentMap.floors[0].name);
-  map.fitBounds(bounds); //only fit map on screen after changing the map, so it doesnt change position on floor change
+  
+  const activeFloorButton = layersContainer.querySelector(".layer-button.active");
+  loadFloor(activeFloorButton ? activeFloorButton.textContent : currentMap.floors[0].name);
+  map.fitBounds(bounds); 
 }
 
-function loadFloor(floorName) {
+async function loadFloor(floorName) {
   // Clear old markers & categories
   for (let key in markerLayers) markerLayers[key].forEach(m => map.removeLayer(m));
   markerLayers = {};
@@ -80,58 +168,78 @@ function loadFloor(floorName) {
 
   if (backgroundOverlay) map.removeLayer(backgroundOverlay);
   backgroundOverlay = L.imageOverlay(imagePath, bounds).addTo(map);
-  //map.fitBounds(bounds); 
-  //if map fitbounds not used on every floor change, then it stays at same location and is much more comfortable to use
 
-  fetch(dataPath)
-    .then(res => res.json())
-    .then(data => loadMarkers(data))
-    .catch(err => console.error("Failed to load floor JSON", err));
+  try {
+    const response = await fetch(dataPath);
+    if (!response.ok) throw new Error(`Failed to load floor JSON: ${response.statusText}`);
+    const data = await response.json();
+    loadMarkers(data);
+  } catch (err) {
+    console.error("Failed to load floor data:", err);
+  }
 }
 
 function loadMarkers(data) {	
-  data.markers.forEach(function (markerData) {
-    var categoriesContainer = document.getElementById('categories-container');
+  const urlState = decodeURLState();
+  const categoriesContainer = document.getElementById('categories-container');
+  
+  // Sort markers by name to ensure consistent bitmask decoding
+  const sortedMarkers = [...data.markers].sort((a, b) => a.name.localeCompare(b.name));
 
-    var categorySection = document.getElementById(markerData.category);
+  data.markers.forEach((markerData) => {
+    let categorySection = document.getElementById(markerData.category);
     if (!categorySection) {
       categorySection = document.createElement('div');
       categorySection.id = markerData.category;
       categorySection.classList.add('category-section');
 
-      var categoryTitle = document.createElement('h4');
+      const categoryTitle = document.createElement('h4');
       categoryTitle.textContent = markerData.category;
       categorySection.appendChild(categoryTitle);
 
-      var buttonsContainer = document.createElement('div');
+      const buttonsContainer = document.createElement('div');
       buttonsContainer.classList.add('marker-buttons');
       categorySection.appendChild(buttonsContainer);
 
       categoriesContainer.appendChild(categorySection);
     }
 
-    var buttonsContainer = categorySection.querySelector('.marker-buttons');
+    const buttonsContainer = categorySection.querySelector('.marker-buttons');
+    const iconUrl = markerData.url ? `maps/${markerData.url}` : `maps/Icons/default.png`;
 
-    var iconUrl = markerData.url ? `maps/${markerData.url}` : `maps/Icons/default.png`;
-
-    var button = document.createElement('button');
+    const button = document.createElement('button');
     button.className = "marker-toggle";
     button.dataset.markerName = markerData.name;
-    button.dataset.visible = "true";
+    
+    // Determine initial visibility
+    let isVisible = true;
+    if (urlState) {
+      const markerIdxInSorted = sortedMarkers.indexOf(markerData);
+      isVisible = (urlState.markerBitmask & (1n << BigInt(markerIdxInSorted))) !== 0n;
+    }
+    
+    button.dataset.visible = isVisible ? "true" : "false";
+    if (!isVisible) button.classList.add("disabled");
+    
     button.innerHTML = `<img src="${iconUrl}" alt="${markerData.name} icon" class="marker-icon" /><span style="text-align: left;">${markerData.name}</span>`;
 
-    button.addEventListener('click', function () {
-      var isVisible = button.dataset.visible === "true";
-      button.dataset.visible = isVisible ? "false" : "true";
-      button.classList.toggle("disabled", isVisible);
-      toggleMarkers(markerData.name, !isVisible);
+    button.addEventListener('click', () => {
+      const currentVisible = button.dataset.visible === "true";
+      button.dataset.visible = currentVisible ? "false" : "true";
+      button.classList.toggle("disabled", currentVisible);
+      toggleMarkers(markerData.name, !currentVisible);
+      updateURLState();
+      checkVisible();
     });
 
     buttonsContainer.appendChild(button);
 
-    markerData.points.forEach(function (point) {
-      addMarker(markerData, point);
-    });
+    markerData.points.forEach(point => addMarker(markerData, point));
+    
+    // Apply visibility to markers immediately if hidden
+    if (!isVisible) {
+      toggleMarkers(markerData.name, false);
+    }
 
     const urlParams = new URLSearchParams(window.location.search);
     const markerParam = urlParams.get('marker');
@@ -139,25 +247,33 @@ function loadMarkers(data) {
       filterMarkersByName(markerParam);
     }
   });
-  checkVisible();	
+  checkVisibleUI();	
+  checkVisible();  
+}
+
+function checkVisibleUI() {
+  const searchVal = document.getElementById('search-bar').value;
+  if (searchVal.length > 0) {
+    checkSearch(searchVal);
+  }
 }
 
 function addMarker(markerData, point) {
-  var description = point.desc || markerData.desc;
-  var iconUrl = markerData.url ? `maps/${markerData.url}` : `maps/Icons/default.png`;
+  const description = point.desc || markerData.desc;
+  const iconUrl = markerData.url ? `maps/${markerData.url}` : `maps/Icons/default.png`;
 
-  var markerIcon = L.icon({
+  const markerIcon = L.icon({
     iconUrl: iconUrl,
     iconSize: [26, 26],
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
   });
 
-  var marker = L.marker([point.y, point.x], {
+  const marker = L.marker([point.y, point.x], {
     icon: markerIcon
   }).addTo(map);
 
-   var popupContent = `
+  const popupContent = `
     <div class="custom-popup">
       <h3 style='text-align:center;'>${markerData.name}</h3>
       <p style='text-align:center;'>${description}</p>
@@ -166,28 +282,9 @@ function addMarker(markerData, point) {
   `;
 
   marker.bindPopup(popupContent);
-        marker.on('click', function (e) {
-            this.openPopup();
-        });
-        //marker.on('mouseout', function (e) {
-       //     this.closePopup();
-       // });
-	
-    /*marker.on("click", function (e) {
-	var tempArr = Array.from(this._icon.classList);
-	var alreadyClicked = false;
-	for (var i = 0; i < tempArr.length; i++) {
-		if(tempArr[i] == "clicked"){
-			alreadyClicked = true;
-		}
-  	  }
-	if(!alreadyClicked){
-		this._icon.classList.add('clicked');
-	}else{
-		this._icon.classList.remove('clicked');
-	}
-
-        });*/
+  marker.on('click', function() {
+    this.openPopup();
+  });
 
   if (!markerLayers[markerData.name]) {
     markerLayers[markerData.name] = [];
@@ -196,20 +293,20 @@ function addMarker(markerData, point) {
 }
 
 function toggleMarkers(name, isVisible) {
-  var markers = markerLayers[name];
+  const markers = markerLayers[name];
   if (markers) {
-    markers.forEach(function (marker) {
+    markers.forEach(marker => {
       isVisible ? marker.addTo(map) : map.removeLayer(marker);
     });
-   }
+  }
 }
 
 function filterMarkersByName(targetName) {
-  for (let markerName in markerLayers) {
+  for (const markerName in markerLayers) {
     const isMatch = markerName.toLowerCase() === targetName.toLowerCase();
     toggleMarkers(markerName, isMatch);
 
-    let button = document.querySelector(`.marker-toggle[data-marker-name="${markerName}"]`);
+    const button = document.querySelector(`.marker-toggle[data-marker-name="${markerName}"]`);
     if (button) {
       button.dataset.visible = isMatch ? "true" : "false";
       button.classList.toggle("disabled", !isMatch);
@@ -217,44 +314,34 @@ function filterMarkersByName(targetName) {
   }
 }
 
-function toggleHideAll() {
-	document.getElementById('toggle-all').click();
-}
-
-//document.getElementById("dev-mode-toggle").addEventListener("click", function () {
- // devMode = !devMode;
-  //this.textContent = devMode ? "Dev Mode: ON" : "Dev Mode: OFF";
-  //this.classList.toggle("active", devMode);
-//});
-
-document.getElementById("mobile-mode-toggle").addEventListener("click", function () {
+document.getElementById("mobile-mode-toggle").addEventListener("click", function() {
   document.getElementById('show-menu').style.display = 'block';
   this.parentNode.style.display = 'none';
   document.getElementById("map").style.width = '100%';
   document.getElementById("map").style.margin = '0';
 });
 
-document.getElementById("show-menu").addEventListener("click", function () {
+document.getElementById("show-menu").addEventListener("click", function() {
   this.style.display = 'none';
   document.getElementById('mobile-mode-toggle').parentNode.style.display = 'block';
 });
 
 function checkSearch(value) {
-  var searchText = value.toLowerCase();
-  var buttons = document.querySelectorAll('.marker-toggle');
-  var categoriesList = [];
-  var categoriesFound = [];
+  const searchText = value.toLowerCase();
+  const buttons = document.querySelectorAll('.marker-toggle');
+  const categoriesList = [];
+  const categoriesFound = [];
 
-  buttons.forEach(function(button) {
-    document.getElementById(button.closest('.category-section').id).style.display = 'block';
-    var categoryFound = false;
-    var markerName = button.dataset.markerName.toLowerCase();
-    var categoryName = button.closest('.category-section').id.toLowerCase(); 
-    var categoryId = button.closest('.category-section').id;
+  buttons.forEach(button => {
+    const categorySection = button.closest('.category-section');
+    categorySection.style.display = 'block';
+    const markerName = button.dataset.markerName.toLowerCase();
+    const categoryName = categorySection.id.toLowerCase(); 
+    const categoryId = categorySection.id;
     
-    if(!categoriesList.includes(categoryId)){
-	categoriesList.push(categoryId);
-     }
+    if (!categoriesList.includes(categoryId)) {
+      categoriesList.push(categoryId);
+    }
     if (markerName.includes(searchText) || categoryName.includes(searchText)) {
       categoriesFound.push(categoryId);
       button.style.display = 'flex';
@@ -263,38 +350,37 @@ function checkSearch(value) {
       button.style.display = 'none';
       button.style.height = '0';
     }
-  }); //buttons for each end
+  });
   
-  categoriesFound.forEach(function(e) {
-	var index = categoriesList.indexOf(e);
-	if (index !== -1) {
- 	 categoriesList.splice(index, 1);
-	}
-   }); //remove found categories from main list
+  categoriesFound.forEach(e => {
+    const index = categoriesList.indexOf(e);
+    if (index !== -1) {
+      categoriesList.splice(index, 1);
+    }
+  });
 
-   categoriesList.forEach(function(e) {
-      document.getElementById(e).style.display = 'none';
-   });
+  categoriesList.forEach(e => {
+    document.getElementById(e).style.display = 'none';
+  });
 }
 
-document.getElementById('search-bar').addEventListener('input', function(e) {
-  checkSearch(document.getElementById('search-bar').value);
+document.getElementById('search-bar').addEventListener('input', e => {
+  checkSearch(e.target.value);
 });
 
 function checkVisible() {
-  document.querySelectorAll('.marker-toggle').forEach(button => {
-    const name = button.dataset.markerName;
-    button.dataset.visible = allVisible ? "false" : "true";
-    button.classList.toggle("disabled", allVisible);
-    toggleMarkers(name, !allVisible);
-  });
-	if(document.getElementById('search-bar').value.length > 0){
-		checkSearch(document.getElementById('search-bar').value);
-	}
+  const toggleAll = document.getElementById('toggle-all');
+  if (!toggleAll) return;
 
+  const allMarkers = Array.from(document.querySelectorAll('.marker-toggle'));
+  const isSomeVisible = allMarkers.some(b => b.dataset.visible === "true");
+
+  toggleAll.textContent = isSomeVisible ? "Hide Markers" : "Show Markers";
+  toggleAll.classList.toggle("all-on", !isSomeVisible);
+  toggleAll.classList.toggle("all-off", isSomeVisible);
 }
 
-document.getElementById('toggle-all').addEventListener('click', function () {
+document.getElementById('toggle-all').addEventListener('click', function() {
   allVisible = this.textContent.includes("Hide");
   document.querySelectorAll('.marker-toggle').forEach(button => {
     const name = button.dataset.markerName;
@@ -302,24 +388,25 @@ document.getElementById('toggle-all').addEventListener('click', function () {
     button.classList.toggle("disabled", allVisible);
     toggleMarkers(name, !allVisible);
   });
+  updateURLState();
   this.textContent = allVisible ? "Show Markers" : "Hide Markers";
   this.classList.toggle("all-on", !allVisible);
   this.classList.toggle("all-off", allVisible);
 });
 
-//add back coordinate on click
-map.on("click", function (event) {
-  if (!devMode) return; // Only allow copying if Dev Mode is enabled
+map.on("click", async event => {
+  if (!devMode) return;
 
-  var lat = event.latlng.lat;
-  var lng = event.latlng.lng;
-
-  var coordinateText = `{"x": ${lng}, "y": ${lat}}`;
+  const { lat, lng } = event.latlng;
+  const coordinateText = JSON.stringify({ x: lng, y: lat });
   console.log(coordinateText);
 
-  navigator.clipboard.writeText(coordinateText).then(() => {
+  try {
+    await navigator.clipboard.writeText(coordinateText);
     console.log("Copied to clipboard:", coordinateText);
-  }).catch(err => {
+  } catch (err) {
     console.error("Failed to copy:", err);
-  });
+  }
 });
+
+init();
