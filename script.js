@@ -34,16 +34,31 @@ function updateURLState() {
 
   // Use a stable sort to ensure bitmask is consistent regardless of DOM order
   const buttons = Array.from(document.querySelectorAll('.marker-toggle'));
+  if (buttons.length === 0) return; // Don't update state if UI is not ready
+
   buttons.sort((a, b) => a.dataset.markerName.localeCompare(b.dataset.markerName));
 
   let markerBitmask = 0n;
+  const allMarkers = buttons.length;
+  let visibleCount = 0;
   buttons.forEach((btn, idx) => {
     if (btn.dataset.visible === "true") {
       markerBitmask |= (1n << BigInt(idx));
+      visibleCount++;
     }
   });
 
   combined |= (BigInt(markerBitmask) << 10n);
+
+  if (allMarkers > 0) {
+    if (visibleCount === allMarkers) {
+      combined |= (1n << 120n); // Global Override
+      combined |= (1n << 121n); // All Visible
+    } else if (visibleCount === 0) {
+      combined |= (1n << 120n); // Global Override
+      // Bit 121 is 0 (All Hidden)
+    }
+  }
 
   let base32State = "";
   let temp = combined;
@@ -53,7 +68,13 @@ function updateURLState() {
     temp >>= 5n;
   }
 
+  // Ensure leading zeros are preserved if we want fixed length or just handle as is
+  // The current decoding logic reconstructs it correctly from the end.
+
   const url = new URL(window.location);
+  const oldS = url.searchParams.get('s');
+  if (oldS === base32State) return;
+
   url.searchParams.set('s', base32State);
   window.history.replaceState({}, '', url);
 }
@@ -71,9 +92,11 @@ function decodeURLState() {
 
   const mapIdx = Number(combined & 31n);
   const floorIdx = Number((combined >> 5n) & 31n);
-  const markerBitmask = combined >> 10n;
+  const markerBitmask = (combined >> 10n) & ((1n << 110n) - 1n); // Support more markers
+  const globalOverride = (combined >> 120n) & 1n;
+  const globalVisible = (combined >> 121n) & 1n;
 
-  return { mapIdx, floorIdx, markerBitmask };
+  return { mapIdx, floorIdx, markerBitmask, globalOverride, globalVisible };
 }
 
 async function init() {
@@ -92,15 +115,16 @@ async function init() {
       currentMap = mapsData[1];
     }
 
-    loadMapButtons();
+    await loadMapButtons();
     isInitializing = false;
+    updateURLState();
   } catch (error) {
     console.error("Initialization error:", error);
     isInitializing = false;
   }
 }
 
-function loadMapButtons() {
+async function loadMapButtons() {
   mapButtonsContainer.innerHTML = ""; // Clear existing
   mapsData.forEach((mapData, i) => {
     const button = document.createElement("button");
@@ -108,11 +132,12 @@ function loadMapButtons() {
     button.textContent = mapData.name;
 
     if (currentMap === mapData) button.classList.add("active");
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
+      if (currentMap === mapData) return;
       document.querySelectorAll("#map-buttons-container .layer-button").forEach(b => b.classList.remove("active"));
       button.classList.add("active");
       currentMap = mapData;
-      loadFloorButtons();
+      await loadFloorButtons();
       updateURLState();
     });
     if (i === 4){
@@ -121,10 +146,10 @@ function loadMapButtons() {
 	} 
     mapButtonsContainer.appendChild(button);
   });
-  loadFloorButtons();
+  await loadFloorButtons();
 }
 
-function loadFloorButtons() {
+async function loadFloorButtons() {
   const urlState = decodeURLState();
   layersContainer.innerHTML = "";
   currentMap.floors.forEach((floor, i) => {
@@ -143,17 +168,18 @@ function loadFloorButtons() {
        button.classList.add("active");
     }
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
+      if (button.classList.contains("active")) return;
       document.querySelectorAll("#layers-container .layer-button").forEach(b => b.classList.remove("active"));
       button.classList.add("active");
-      loadFloor(floor.name);
+      await loadFloor(floor.name);
       updateURLState();
     });
     layersContainer.appendChild(button);
   });
   
   const activeFloorButton = layersContainer.querySelector(".layer-button.active");
-  loadFloor(activeFloorButton ? activeFloorButton.textContent : currentMap.floors[0].name);
+  await loadFloor(activeFloorButton ? activeFloorButton.textContent : currentMap.floors[0].name);
   map.fitBounds(bounds); 
 }
 
@@ -214,8 +240,12 @@ function loadMarkers(data) {
     // Determine initial visibility
     let isVisible = true;
     if (urlState) {
-      const markerIdxInSorted = sortedMarkers.indexOf(markerData);
-      isVisible = (urlState.markerBitmask & (1n << BigInt(markerIdxInSorted))) !== 0n;
+      if (urlState.globalOverride === 1n) {
+        isVisible = urlState.globalVisible === 1n;
+      } else {
+        const markerIdxInSorted = sortedMarkers.indexOf(markerData);
+        isVisible = (urlState.markerBitmask & (1n << BigInt(markerIdxInSorted))) !== 0n;
+      }
     }
     
     button.dataset.visible = isVisible ? "true" : "false";
@@ -240,13 +270,14 @@ function loadMarkers(data) {
     if (!isVisible) {
       toggleMarkers(markerData.name, false);
     }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const markerParam = urlParams.get('marker');
-    if (markerParam) {
-      filterMarkersByName(markerParam);
-    }
   });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const markerParam = urlParams.get('marker');
+  if (markerParam) {
+    filterMarkersByName(markerParam);
+  }
+
   checkVisibleUI();	
   checkVisible();  
 }
@@ -373,25 +404,41 @@ function checkVisible() {
   if (!toggleAll) return;
 
   const allMarkers = Array.from(document.querySelectorAll('.marker-toggle'));
-  const isSomeVisible = allMarkers.some(b => b.dataset.visible === "true");
+  if (allMarkers.length === 0) return;
 
-  toggleAll.textContent = isSomeVisible ? "Hide Markers" : "Show Markers";
-  toggleAll.classList.toggle("all-on", !isSomeVisible);
-  toggleAll.classList.toggle("all-off", isSomeVisible);
+  const allVisibleStatus = allMarkers.every(b => b.dataset.visible === "true");
+  const allHiddenStatus = allMarkers.every(b => b.dataset.visible === "false");
+
+  if (allVisibleStatus) {
+    allVisible = true;
+    toggleAll.textContent = "Hide Markers";
+    toggleAll.classList.remove("all-on");
+    toggleAll.classList.add("all-off");
+  } else if (allHiddenStatus) {
+    allVisible = false;
+    toggleAll.textContent = "Show Markers";
+    toggleAll.classList.add("all-on");
+    toggleAll.classList.remove("all-off");
+  } else {
+    // Mixed state
+    const isSomeVisible = allMarkers.some(b => b.dataset.visible === "true");
+    allVisible = isSomeVisible;
+    toggleAll.textContent = isSomeVisible ? "Hide Markers" : "Show Markers";
+    toggleAll.classList.toggle("all-on", !isSomeVisible);
+    toggleAll.classList.toggle("all-off", isSomeVisible);
+  }
 }
 
 document.getElementById('toggle-all').addEventListener('click', function() {
-  allVisible = this.textContent.includes("Hide");
+  const shouldHide = this.textContent.includes("Hide");
   document.querySelectorAll('.marker-toggle').forEach(button => {
     const name = button.dataset.markerName;
-    button.dataset.visible = allVisible ? "false" : "true";
-    button.classList.toggle("disabled", allVisible);
-    toggleMarkers(name, !allVisible);
+    button.dataset.visible = shouldHide ? "false" : "true";
+    button.classList.toggle("disabled", shouldHide);
+    toggleMarkers(name, !shouldHide);
   });
   updateURLState();
-  this.textContent = allVisible ? "Show Markers" : "Hide Markers";
-  this.classList.toggle("all-on", !allVisible);
-  this.classList.toggle("all-off", allVisible);
+  checkVisible();
 });
 
 map.on("click", async event => {
