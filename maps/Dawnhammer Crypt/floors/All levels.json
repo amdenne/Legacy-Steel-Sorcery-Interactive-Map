@@ -168,7 +168,7 @@
       "points": [
 	{"x": 750.025, "y": 424.625},
 	{"x": 168.5, "y": 427},
-	{"x": 368.75, "y": 465.25},
+	{"x":426.5,"y":462.625},
 	{"x": 499, "y": 596}
       ]
     },
@@ -227,6 +227,17 @@
 	{"x": 548.459, "y": 489.316},
 	{"x": 357.59375, "y": 510.4375},
 	{"x": 640.125, "y": 551.4375}
+      ]
+    },
+		 {
+      "name": "Necromancer",
+      "color": "#f5fced",
+      "category": "Enemies",
+      "url": "images/Icons/necromancer.png",
+      "desc": "Necromancer (drops Transmutation Recipes, Gear, Keys, Mats)",
+      "points": [
+	{"x":263.375,"y":460.375},
+	{"x":336.25,"y":469.75}
       ]
     },
 	 {

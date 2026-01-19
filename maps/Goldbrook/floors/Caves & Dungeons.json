@@ -98,7 +98,8 @@
       "points": [ 
 	{"x": 662.25, "y": 343.75},
 	{"x": 825, "y": 656},
-	{"x": 811.75, "y": 676.5}
+	{"x": 811.75, "y": 676.5},
+	{"x":776.125,"y":611.625}
       ]
     },
 	 {
@@ -162,6 +163,17 @@
 	{"x": 53.75, "y": 458.75}
 	      ]
     },
+{
+      "name": "Tools & Mats",
+      "color": "#f7d97e",
+      "category": "Dropped Items",
+      "desc": "Various tools such as Simple Vial, Simple Rope & materials such as Birch Logs and Copper Ore",
+      "url": "images/Icons/tools.png",
+      "points": [
+	{"desc": "Inside and around the room","x":815.5,"y":671.75}
+      ]
+    },
+
 	
  {
       "name": "Minecart",
