@@ -886,17 +886,6 @@
       ]
     },
 	{
-      "name": "Potions",
-      "color": "#f7d97e",
-      "category": "Dropped Items",
-      "desc": "Random potions, including Invulnerability & Sprint potions",
-      "url": "images/Icons/potions.png",
-      "points": [
-	{"x":778.375,"y":782.375}
-      ]
-    },
-
-	{
       "name": "Tools & Mats",
       "color": "#f7d97e",
       "category": "Dropped Items",
