@@ -7,6 +7,7 @@
       "desc": "Skeleton Spawn",
       "url": "images/Icons/mob-default.png",
       "points": [
+	{"x":359.375,"y":392},
 	{"x": 619.375, "y": 574.65625},
 	{"x": 612, "y": 530.5},
 	{"x": 481.40625, "y": 437.6875},
@@ -393,6 +394,7 @@
       "desc": "Gravemarrow Root",
       "url": "images/Icons/gravemarrow.png",
       "points": [	
+	{"image":"images/Collectables/gravemarrow609.png","x":609.25,"y":436.125},
 	{"image":"images/Collectables/gravemarrow134.png","x": 134.25, "y": 336.6875},
 	{"image":"images/Collectables/gravemarrow240.png","x": 240.5, "y": 612.28125}
 	]

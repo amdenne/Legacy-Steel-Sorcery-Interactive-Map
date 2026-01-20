@@ -7,6 +7,7 @@
       "desc": "Skeleton Spawn",
       "url": "images/Icons/mob-default.png",
       "points": [
+	{"x":359.375,"y":392},
 	{ "desc": "Skeleton Archer in the bottom of the room","x": 227.625, "y": 472.975},
 	{"desc": "Skeleton Archer","x": 171, "y": 596.845},
 	{ "desc": "Skeleton Archer","x": 468.965, "y": 494.435},
@@ -247,8 +248,9 @@
       "url": "images/Icons/mob-boss-wraith.png",
       "desc": "Wraith",
       "points": [
-		{"x": 712.58, "y": 540.93},
-{"x": 314.75, "y": 645.75}
+	{"x":435.875,"y":346.25},
+	{"x": 712.58, "y": 540.93},
+	{"x": 314.75, "y": 645.75}
             ]
     },	
 	 {
@@ -258,6 +260,7 @@
       "url": "images/Icons/chest-alchemist.png",
       "desc": "Alchemy Chest",
       "points": [
+	{"x":294.125,"y":495.75},
 	{"x": 652.15625, "y": 488.09375},
 	{"x": 350.1875, "y": 471.5},
 	{"x": 242.78125, "y": 397.5625},
@@ -306,7 +309,8 @@
 	{"desc":"On the bottom floor","x": 347.28125, "y": 457.405},
 	{"desc":"On the bottom floor","x": 519.565, "y": 616.125},
 	{"desc":"On the bottom floor","x": 607.75, "y": 386.095},
-	{"desc":"On the bottom floor","x": 625.575, "y": 391.595},
+	{"desc":"On the bottom floor","x": 625.575, "y": 391.595},	
+	{"desc":"On the bottom floor","x":231.625,"y":430.25},
 	{"x": 694.475, "y": 599.525},
 	{"x": 742.5, "y": 584.785},
 	{"x": 170, "y": 478.715},
@@ -355,6 +359,7 @@
       "url": "images/Icons/armor-chest.png",
       "desc": "Armor & Weapons",
       "points": [
+	{"x":298.375,"y":500.125},
 	{"x": 431.34375, "y": 394.15625},
 	{"desc":"Middle floor corner","x": 653.65625, "y": 457.625},
 	{"desc":"Inside Sewer Key extract","x": 418.9375, "y": 388.21875},
@@ -372,7 +377,7 @@
 	{"x": 729.375, "y": 457.75},
 	{"x": 180.315, "y": 535.85},
 	{"x": 512.935, "y": 382.845},
-	{"x": 450.125, "y": 348.065},
+	{"x":437.125,"y":357.25},
 	{"x": 382.025, "y": 572.215},
 	{"x": 446.475, "y": 569.185},
 	{"x": 436.525, "y": 549.875},
@@ -452,10 +457,9 @@
       "desc": "Birch, Oak and Maple",
       "points": [     
 	{"x": 491.65625, "y": 357.59375},
-	{"x": 424.6875, "y": 344.9375},
 	{"x": 489.31, "y": 349.22},
-	{"x": 413.1875, "y": 354.9375},
-	{"x": 483.875, "y": 350.9375}
+	{"x": 413.1875, "y": 354.9375}
+        
       ]
     },
 	{
@@ -465,9 +469,11 @@
       "category": "Trees",
       "desc": "Birch, Oak, Maple and Ironwood",
       "points": [
+	{"x":423.625,"y":358.875},
 	{"x": 483.875, "y": 350.9375}
       ]
     },
+
 	 {
       "name": "Barrels",
       "color": "#c49300",
@@ -475,6 +481,7 @@
       "desc": "Barrels",
       "url": "images/Icons/chest-barrel.png",
       "points": [ 
+	{"x":280.375,"y":475.875},
 	{"desc":"On the top floor","x": 395.90625, "y": 589.78125},
 	{"x": 748.4375, "y": 366.25},
 	{"x": 430.1875, "y": 477.34375},
@@ -798,6 +805,7 @@
 	{"x": 422.625, "y": 393.09375},	
 	{"x": 687.84375, "y": 614.71875},
 	{"x": 670.1875, "y": 605.78125},
+	{"image":"images/Collectables/gravemarrow609.png","x":609.25,"y":436.125},
 	{"image":"images/Collectables/gravemarrow303.png","x": 303.625, "y": 511.1875},
 	{"image":"images/Collectables/gravemarrow688.png","desc":"Tight corridor in Catacombs of Consecration","x": 685.8051894033027, "y": 608.9073269492657},
 	{"image":"images/Collectables/gravemarrow157.png","x": 160.84375, "y": 505.03125},

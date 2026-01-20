@@ -140,6 +140,7 @@
       "url": "images/Icons/chest-alchemist.png",
       "desc": "Alchemy Chest",
       "points": [
+	{"x":294.125,"y":495.75},
 	{"desc":"On the bottom floor","x": 523.15625, "y": 614.71875},
 	{"desc":"Bottom floor corridor","x": 532.9375, "y": 559.0625}
       ]
@@ -151,6 +152,7 @@
       "desc": "Coffins",
       "url": "images/Icons/chest-coffin.png",
       "points": [ 
+	{"desc":"On the bottom floor","x":231.625,"y":430.25},
 	{"desc":"On the bottom floor","x": 586.71875, "y": 358.1875},
 	{"desc":"On the bottom floor","x": 347.28125, "y": 457.40625},
 	{"desc":"On the bottom floor","x": 519.5625, "y": 616.125},
@@ -165,6 +167,7 @@
       "url": "images/Icons/armor-chest.png",
       "desc": "Armor & Weapons",
       "points": [
+	{"x":298.375,"y":500.125},
 	{"x": 431.34375, "y": 394.15625},
 	{"x": 636.28125, "y": 457.40625},
 	{"x": 655, "y": 344.5625},
@@ -225,7 +228,8 @@
       "category": "Containers",
       "desc": "Barrels",
       "url": "images/Icons/chest-barrel.png",
-      "points": [ 
+      "points": [ 	
+	{"x":280.375,"y":475.875},
 	{"x": 582.40625, "y": 385.53125},
 	{"x": 452.09375, "y": 425.46875},
 	{"x": 425.59375, "y": 491.6875},
