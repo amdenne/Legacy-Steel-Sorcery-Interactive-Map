@@ -2306,7 +2306,7 @@
       "desc": "Grimm's Lost Recipe",
       "url": "images/Icons/recipe.png",
       "points": [
-	{"image":"images/Collectables/recipe.png","x": 727.375, "y": 346.75}
+	 {"desc": "Under the roof rafters inside the house","image":"images/Collectables/recipe.png","x": 727.375, "y": 346.75}
 	]
     },
 {
@@ -2316,7 +2316,7 @@
       "desc": "Royal Ladle",
       "url": "images/Icons/ladle.png",
       "points": [
-	{"image":"images/Collectables/ladle.png","x": 677.25, "y": 455.625}
+	 {"desc": "Inside the Castle Extract (Castle Key needed) on top of the tallest tower","image":"images/Collectables/ladle.png","x": 677.25, "y": 455.625}
 	]
     },
 

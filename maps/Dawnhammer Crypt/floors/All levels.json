@@ -333,6 +333,7 @@
       "desc": "Requires Greater Skull Key to open",
       "url": "images/Icons/chest-royal-coffin.png",
       "points": [ 
+	{"x":448.875,"y":344.375},
 	{"x": 486.075, "y": 511.875},
 	{"x": 638.575, "y": 509.525},
 	{"x": 262.525, "y": 600.275},
