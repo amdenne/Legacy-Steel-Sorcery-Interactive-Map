@@ -122,8 +122,7 @@
 	{"desc": "Skeleton with green cape in Cursed Vault","x": 499.25, "y": 531.5},
 	{"desc": "Shield Skeleton in Cursed Vault","x": 506.8125, "y": 538.3125},
 	{"desc": "Sword Skeleton in Cursed Vault","x": 485.4375, "y": 560.25},
-	{"desc": "Skeleton in Cursed Vault","x": 474.5625, "y": 558.0625},
-	{"desc": "Shield Skeleton in Cursed Vault","x": 486.3125, "y": 521}
+	{"desc": "Skeleton in Cursed Vault","x": 474.5625, "y": 558.0625}
 
    ]
     },
@@ -177,16 +176,6 @@
         {"x": 886.875, "y": 553.0625},
 	{ "desc": "In Seraph's Rest dungeon","x": 463.125, "y": 409.25},
 	{"x": 865.625, "y": 386.5}
-      ]
-    },
-	{
-      "name": "Big Elite Spider",
-      "color": "#f5fced",
-      "category": "Enemies",
-      "url": "images/Icons/mob-spider-giant.png",
-      "desc": "Giant Spider Elite",
-      "points": [
-        { "desc": "Underground", "x": 487.4375, "y": 550.875}
       ]
     },
   {
@@ -348,6 +337,7 @@
       "desc": "Possible spawns for Lodge upgrade items such as Artisan's Tool Kit,Iron Gear,Steel Tongs,Copper Pot,Master Hammer,Anvil etc.",
       "url": "images/Icons/lodge.png",
       "points":[
+	{"x":475,"y":567},
 	{"x": 757.75, "y": 474.125},
 	{"x": 462.15625, "y": 427.6875},
 	{"x": 575.625, "y": 283},
@@ -561,6 +551,7 @@
       "url": "images/Icons/big-resure.png",
       "desc": "Always contains at least 1 Uncommon treasure",
       "points": [
+	{"x":510.5,"y":526.5},
 	{"x": 740.5, "y": 230.21875},
 	{"x": 583.75, "y": 356.40625},
         {"x": 855.625, "y": 506.65625},
@@ -596,7 +587,6 @@
 	{"x": 590.96875, "y": 361.65625},
 	{"x": 888.84375, "y": 566.96875},
 	{"x": 574.5625, "y": 381.5},
-	{"desc": "Requires Skull Key","x": 510.4375, "y": 527.75},
 	{"x": 582.375, "y": 633.328125},
 	{ "x": 351.0, "y": 698.375},
 	{ "image":"images/Chests/armorChest819.png", "x": 819, "y": 417.625},
@@ -606,7 +596,6 @@
 	{"desc": "Requires Skull Key","x": 483.359375, "y": 567.40625},
 	{"x": 478.421875, "y": 567.5625},
 	{"x": 474.640625, "y": 562.03125},
-	{"x": 474.546875, "y": 558.515625},
 	{"desc": "Requires Skull Key","x": 872.3125, "y": 389.3125},
 	{"x": 466.5, "y": 415.5625},
 	{"desc": "Requires Skull Key","x": 477.125, "y": 419.875},	
@@ -733,6 +722,7 @@
       "desc": "Adventurer Bag",
       "url": "images/Icons/chest-adventurer.png",
       "points": [
+	{"x":511.75,"y":530},
 	{"x": 380.53125, "y": 631.25},
 	{"x": 568.90625, "y": 359.71875},
 	{"x": 276.96875, "y": 708.6875},
