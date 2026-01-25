@@ -222,8 +222,6 @@
       "url": "images/Icons/banshee-elite.png",
       "desc": "Elite Banshee (drops Transmutation Recipes, Spirit Essence, Wizard Scrolls)",
       "points": [
-	{ "desc": "In the bottom of the room","x": 259.78125, "y": 459.3125},
-	{ "desc": "On the bottom floor","x": 301.59375, "y": 476.4375},
         {"x": 233.0625, "y": 611.9375},
 	{"x": 548.459, "y": 489.316},
 	{"x": 357.59375, "y": 510.4375},

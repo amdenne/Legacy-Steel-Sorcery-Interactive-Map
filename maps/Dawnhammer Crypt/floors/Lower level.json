@@ -390,6 +390,7 @@
       "desc": "Gemstones (Topaz, Sapphire, Emerald, Ruby)",
       "url": "images/Icons/gemstone.png",
       "points": [
+	{"x":419,"y":444.75},
 	{"image":"images/Collectables/gemstones600.png","x": 623.0625, "y": 398.4375},
 	{"image":"images/Collectables/gemstones600.png","x": 608.8125, "y": 398.34375},
 	{"image":"images/Collectables/gemstones600.png","x": 606.3125, "y": 398.625},
