@@ -2298,6 +2298,7 @@
 	{"image":"images/Collectables/blackiron2.png","x": 883.75, "y": 611.25}
 	]
     },
+	
 
 {
       "name": "Grimm's Lost Recipe",
@@ -2338,6 +2339,56 @@
       "url": "images/Icons/motherlode.png",
       "points": [
 		{"image":"images/Collectables/motherlode.png","x": 521, "y": 231.75}
+	]
+    },
+	{
+      "name": "Locked Farmhouse #1",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Locked Farmhouse #1",
+      "url": "images/Icons/farmhouse1.png",
+      "points": [
+		{"x":877.8730688430987,"y":612.0009191169569}
+	]
+    },
+{
+      "name": "Locked Farmhouse #2",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Locked Farmhouse #2",
+      "url": "images/Icons/farmhouse2.png",
+      "points": [
+		{"x":252.79067427419074,"y":455.3767670841366}
+	]
+    },
+{
+      "name": "Locked Farmhouse #3",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Locked Farmhouse #3",
+      "url": "images/Icons/farmhouse3.png",
+      "points": [
+		{"x":254.2048878365638,"y":231.22391744800103}
+	]
+    },
+{
+      "name": "Locked Farmhouse #4",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Locked Farmhouse #4",
+      "url": "images/Icons/farmhouse4.png",
+      "points": [
+		{"x":358.5031380615796,"y":592.2019292437335}
+	]
+    },
+{
+      "name": "Locked Farmhouse #5",
+      "color": "#f7d97e",
+      "category": "Quest Items",
+      "desc": "Locked Farmhouse #5",
+      "url": "images/Icons/farmhouse5.png",
+      "points": [
+		{"x":318.19805153394634,"y":634.2747827243331}
 	]
     }
   ]
