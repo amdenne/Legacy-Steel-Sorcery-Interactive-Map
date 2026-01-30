@@ -102,6 +102,7 @@
       "url": "images/Icons/mob-spider.png",
       "desc": "Spiders",
       "points": [
+	{"x":521.875,"y":471.25},
 	{"desc":"On the bottom floor","x": 446.15625, "y": 609.5625},
 	{"x": 405.75, "y": 440.59375},
 	{"x": 418.96875, "y": 435.375},
@@ -156,8 +157,7 @@
       "points": [
 	 { "desc": "On the top of the room, on the ledge","x": 636.75, "y": 540.96875},
 	  {"x": 518.375, "y": 558.3125}, 
-          {"x": 596.96875, "y": 483.8125},
-	{"x": 555.0625, "y": 638.34375}
+          {"x": 596.96875, "y": 483.8125}
 	]
     },
 	{
@@ -198,7 +198,7 @@
       "desc": "Elite Arcane Eye (drops Arcane Flux & Ash)",
       "points": [
       	{"x": 307, "y": 509.25},
-	{"x": 575.875, "y": 645.025},
+	{"x":608.75,"y":644.375},
 	{"x": 517.525, "y": 586.575}
       ]
     },
@@ -605,7 +605,7 @@
       "name": "Tools & Mats",
       "color": "#f7d97e",
       "category": "Dropped Items",
-      "desc": "Search this area for possible spawn of: Wood Saw,Simple Scissors,Crude Awl,Dried Herbs,Ogre Fat,Tree Resin,Paper,Heavy Thread,Simple Buckle,Metal Hinge,Wax Candle,Sewing Needles,Iron Nails,Simple Vial,Simple Rope,Waxed Rope,Fire Powder,Bone Hammer,Splintered Bone,Massive Femur",
+      "desc": "Search this area for possible spawn of: Simple Buckle,Wood Saw,Simple Scissors,Crude Awl,Dried Herbs,Ogre Fat,Tree Resin,Parchment,Fine Thread,Metal Hinge,Wax Candle,Sewing Needles,Iron Nails,Simple Vial,Simple Rope,Fire Powder,Bone Hammer,Splintered Bone,Massive Femur",
       "url": "images/Icons/tools.png",
       "points": [
 	{"x": 644.75, "y": 658.9375},
@@ -800,6 +800,7 @@
       "desc": "Gravemarrow Root",
       "url": "images/Icons/gravemarrow.png",
       "points": [
+	{"x":509.25,"y":601.75},
 	{"x": 431.90625, "y": 411.5625},
 	{"x": 422.625, "y": 393.09375},	
 	{"x": 687.84375, "y": 614.71875},
@@ -852,6 +853,8 @@
       "desc": "Gemstones (Topaz, Sapphire, Emerald, Ruby)",
       "url": "images/Icons/gemstone.png",
       "points": [
+	{"x":640.375,"y":607.625},
+	{"x":618.125,"y":605.125},
 	{"x": 745.09375, "y": 586.71875},
 	{"x": 740.15625, "y": 585.4375},
 	{"x": 786.78125, "y": 584.75},
@@ -935,7 +938,7 @@
       "desc": "Possible spawn Phantom Dagger",
       "url": "images/Icons/dagger.png",
       "points":[
-	{"desc":"In the lower parts of the crypt, locked inside Sewer Extract Room", "image":"images/Collectables/dagger435.png","x": 435.40625, "y": 426.46875}
+	{"desc":"In the lower parts of the crypt, locked inside Sewer Extract Room", "image":"images/Collectables/phantomdagger.png","x": 435.40625, "y": 426.46875}
       ]
     },
 	{

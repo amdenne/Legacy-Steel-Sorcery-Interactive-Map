@@ -1089,7 +1089,7 @@
       "name": "Tools & Mats",
       "color": "#f7d97e",
       "category": "Dropped Items",
-      "desc": "Search this area for possible spawn of: Wood Saw,Simple Scissors,Crude Awl,Dried Herbs,Ogre Fat,Tree Resin,Paper,Heavy Thread,Simple Buckle,Metal Hinge,Wax Candle,Sewing Needles,Iron Nails,Simple Vial,Simple Rope,Waxed Rope,Fire Powder,Bone Hammer,Splintered Bone,Massive Femur",
+           "desc": "Search this area for possible spawn of: Simple Buckle,Wood Saw,Simple Scissors,Crude Awl,Dried Herbs,Ogre Fat,Tree Resin,Parchment,Fine Thread,Metal Hinge,Wax Candle,Sewing Needles,Iron Nails,Simple Vial,Simple Rope,Fire Powder,Bone Hammer,Splintered Bone,Massive Femur",
       "url": "images/Icons/tools.png",
       "points": [
 	{"image": "images/Tools/toolsandmats599.png","x": 599.03125, "y": 422.78125},
