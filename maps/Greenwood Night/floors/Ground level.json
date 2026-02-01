@@ -1175,6 +1175,7 @@
       "url": "images/Icons/lodge.png",
       "points":[
 	{"image":"images/Tools/lodge748.png","x": 748.40625, "y": 234.75},
+	{"x":321.75,"y":631.25},
 	{"x": 696.375, "y": 522.6875},
 	{"x":255.375,"y":225.375},
 	{"x": 312.53125, "y": 632.125},
@@ -1798,6 +1799,9 @@
       "desc": "Moon Lotus (sells for vendor reputation)",
       "url": "images/Icons/moonlotus.png",
       "points": [
+	{"image":"images/Plants/moonlotus666.png","x":627.25,"y":495.75},
+	{"image":"images/Plants/moonlotus666.png","x":624.625,"y":495.375},
+	{"image":"images/Plants/moonlotus444.png","x":433,"y":722.375},
 	{"image":"images/Plants/MoonLotus277.png","x": 277.5, "y": 524.34375},
 	{"image":"images/Plants/MoonLotus503.png","x": 503.625, "y": 394.25},
 	{"image":"images/Plants/MoonLotus270.png","x": 270.25, "y": 648.25},
