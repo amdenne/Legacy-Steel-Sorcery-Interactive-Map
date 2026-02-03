@@ -890,7 +890,7 @@
       "name": "Tools & Mats",
       "color": "#f7d97e",
       "category": "Dropped Items",
-      "desc": "Various tools such as Simple Vial, Simple Rope & materials such as Birch Logs and Copper Ore",
+            "desc": "Search this area for possible spawn of: Simple Buckle,Wood Saw,Simple Scissors,Crude Awl,Dried Herbs,Ogre Fat,Tree Resin,Parchment,Fine Thread,Metal Hinge,Wax Candle,Sewing Needles,Iron Nails,Simple Vial,Simple Rope,Fire Powder,Bone Hammer,Splintered Bone,Massive Femur",
       "url": "images/Icons/tools.png",
       "points": [
 	{"desc": "Inside and around the house","x":97.25,"y":528},

@@ -364,10 +364,25 @@ function filterMarkersByName(targetName) {
 }
 
 function checkSearch(value) {
-  const searchText = value.toLowerCase();
+  var searchText = value.toLowerCase();
+  var foundMatchLodge = false; 
+  var foundMatchGolden = false; 
   const buttons = document.querySelectorAll('.marker-toggle');
   const categoriesList = [];
   const categoriesFound = [];
+  
+  if(searchText.includes("honey") || searchText.includes("honeywine") || searchText.includes("mead") || searchText.includes("darkiron") || searchText.includes("crank")){
+	foundMatchLodge = true;
+  }
+   if(searchText.includes("golden") || searchText.includes("thimble")){
+	foundMatchGolden = true;
+  }
+  if(foundMatchLodge){
+	searchText = "lodge items";	
+  }
+  if(foundMatchGolden){
+	searchText = "tree bag";	
+  }
 
   buttons.forEach(button => {
     const categorySection = button.closest('.category-section');

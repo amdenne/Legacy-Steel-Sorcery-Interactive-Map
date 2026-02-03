@@ -16,7 +16,7 @@
 	{"x": 145.125, "y": 428.0625},
 	{"x": 250.28125, "y": 563.96875},
 	{ "desc": "Skeleton Archer","x": 273.21875, "y": 594.28125},
-	{"x": 526.125, "y": 606.34375},
+	{"x":543.75,"y":606.75},
 	{"x": 577.352686838816, "y": 562.8569978244918},
 	{"x": 553.34375, "y": 464.4375}
    ]
@@ -111,7 +111,7 @@
       "url": "images/Icons/arcane-eye-elite.png",
       "desc": "Elite Arcane Eye (drops Arcane Flux & Ash)",
       "points": [
-	{"x": 575.84375, "y": 645.03125}
+	{"x":608.75,"y":644.375}
       ]
     },
 {
@@ -290,7 +290,7 @@
       "name": "Tools & Mats",
       "color": "#f7d97e",
       "category": "Dropped Items",
-      "desc": "Search this area for possible spawn of: Wood Saw,Simple Scissors,Crude Awl,Dried Herbs,Ogre Fat,Tree Resin,Paper,Heavy Thread,Simple Buckle,Metal Hinge,Wax Candle,Sewing Needles,Iron Nails,Simple Vial,Simple Rope,Waxed Rope,Fire Powder,Bone Hammer,Splintered Bone,Massive Femur",
+            "desc": "Search this area for possible spawn of: Simple Buckle,Wood Saw,Simple Scissors,Crude Awl,Dried Herbs,Ogre Fat,Tree Resin,Parchment,Fine Thread,Metal Hinge,Wax Candle,Sewing Needles,Iron Nails,Simple Vial,Simple Rope,Fire Powder,Bone Hammer,Splintered Bone,Massive Femur",
       "url": "images/Icons/tools.png",
       "points": [
 	{"x": 543.59375, "y": 653.6875},
