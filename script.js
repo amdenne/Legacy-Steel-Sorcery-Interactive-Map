@@ -11,6 +11,7 @@ const map = L.map('map', {
 let bounds = [[0, 0], [1000, 1000]];
 let backgroundOverlay;
 let markerLayers = {};
+const selectedMarkerNames = new Set();
 let devMode = false;
 let timestamp = new Date().getTime();
 let currentMap = null;
@@ -90,10 +91,10 @@ async function init() {
     isInitializing = true;
     const response = await fetch("maps/manifest.json");
     if (!response.ok) throw new Error(`Failed to fetch manifest: ${response.statusText}`);
-    
+
     const data = await response.json();
     mapsData = data.maps;
-    
+
     const urlState = decodeURLState();
     if (urlState && mapsData[urlState.mapIdx]) {
       currentMap = mapsData[urlState.mapIdx];
@@ -168,7 +169,9 @@ function loadFloorButtons() {
 
 async function loadFloor(floorName) {
   // Clear old markers & categories
-  for (let key in markerLayers) markerLayers[key].forEach(m => map.removeLayer(m));
+  for (let key in markerLayers) {
+    markerLayers[key].forEach(m => map.removeLayer(m));
+  }
   markerLayers = {};
   document.getElementById("categories-container").innerHTML = "";
 
@@ -188,10 +191,9 @@ async function loadFloor(floorName) {
   }
 }
 
-function loadMarkers(data) {	
+function loadMarkers(data) {
   const urlState = decodeURLState();
   const categoriesContainer = document.getElementById('categories-container');
-  
   // Sort markers by name to ensure consistent bitmask decoding
   const sortedMarkers = [...data.markers].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -219,14 +221,21 @@ function loadMarkers(data) {
     const button = document.createElement('button');
     button.className = "marker-toggle";
     button.dataset.markerName = markerData.name;
-    
     // Determine initial visibility
     let isVisible = true;
-    if (urlState) {
+
+    // Priority 1: If we're switching floors and have preserved selections, use those
+    if (selectedMarkerNames.size > 0) {
+      isVisible = selectedMarkerNames.has(markerData.name);
+    }
+    // Priority 2: Otherwise, check URL state for initial page load
+    else if (urlState) {
       const markerIdxInSorted = sortedMarkers.indexOf(markerData);
       isVisible = (urlState.markerBitmask & (1n << BigInt(markerIdxInSorted))) !== 0n;
+      if(isVisible) selectedMarkerNames.add(markerData.name)
     }
-    
+    // Priority 3: Default to visible if no state exists
+
     button.dataset.visible = isVisible ? "true" : "false";
     if (!isVisible) button.classList.add("disabled");
     
@@ -236,6 +245,10 @@ function loadMarkers(data) {
       const currentVisible = button.dataset.visible === "true";
       button.dataset.visible = currentVisible ? "false" : "true";
       button.classList.toggle("disabled", currentVisible);
+      if(button.dataset.visible === "true")
+        selectedMarkerNames.add(markerData.name)
+      else
+        selectedMarkerNames.delete(markerData.name)
       toggleMarkers(markerData.name, !currentVisible);
       updateURLState();
       checkVisible();
@@ -257,7 +270,8 @@ function loadMarkers(data) {
     }
   });
   checkVisibleUI();	
-  checkVisible();  
+  checkVisible();
+  updateURLState();
 }
 
 function checkVisibleUI() {
@@ -311,16 +325,42 @@ function toggleMarkers(name, isVisible) {
 }
 
 function filterMarkersByName(targetName) {
-  for (const markerName in markerLayers) {
-    const isMatch = markerName.toLowerCase() === targetName.toLowerCase();
-    toggleMarkers(markerName, isMatch);
+  const targetLower = targetName.toLowerCase();
+  const markersToAdd = [];
+  const markersToRemove = [];
+  const buttons = document.querySelectorAll('.marker-toggle');
+  const buttonUpdates = [];
 
-    const button = document.querySelector(`.marker-toggle[data-marker-name="${markerName}"]`);
-    if (button) {
-      button.dataset.visible = isMatch ? "true" : "false";
-      button.classList.toggle("disabled", !isMatch);
+  // Batch marker visibility operations
+  for (const markerName in markerLayers) {
+    const isMatch = markerName.toLowerCase() === targetLower;
+    const markers = markerLayers[markerName];
+
+    if (markers) {
+      if (isMatch) {
+        markersToAdd.push(...markers);
+      } else {
+        markersToRemove.push(...markers);
+      }
     }
   }
+
+  // Batch button state updates
+  buttons.forEach(button => {
+    const markerName = button.dataset.markerName;
+    const isMatch = markerName.toLowerCase() === targetLower;
+    buttonUpdates.push({ button, isMatch });
+  });
+
+  // Apply all marker operations
+  markersToRemove.forEach(marker => map.removeLayer(marker));
+  markersToAdd.forEach(marker => marker.addTo(map));
+
+  // Apply all button updates
+  buttonUpdates.forEach(({ button, isMatch }) => {
+    button.dataset.visible = isMatch ? "true" : "false";
+    button.classList.toggle("disabled", !isMatch);
+  });
 }
 
 function checkSearch(value) {
@@ -391,12 +431,36 @@ document.getElementById('search-bar').addEventListener('input', e => {
 
 document.getElementById('toggle-all').addEventListener('click', function() {
   allVisible = this.textContent.includes("Hide");
-  document.querySelectorAll('.marker-toggle').forEach(button => {
+  const buttons = document.querySelectorAll('.marker-toggle');
+  const targetVisible = !allVisible;
+  const allMarkers = [];
+
+  // Batch collect all markers and button updates
+  buttons.forEach(button => {
     const name = button.dataset.markerName;
-    button.dataset.visible = allVisible ? "false" : "true";
-    button.classList.toggle("disabled", allVisible);
-    toggleMarkers(name, !allVisible);
+    button.dataset.visible = targetVisible ? "true" : "false";
+    button.classList.toggle("disabled", !targetVisible);
+
+    const markers = markerLayers[name];
+    if (markers) {
+      allMarkers.push(...markers);
+    }
+
+    // Update selectedMarkerNames state
+    if (targetVisible) {
+      selectedMarkerNames.add(name);
+    } else {
+      selectedMarkerNames.delete(name);
+    }
   });
+
+  // Apply all marker visibility changes in batch
+  if (targetVisible) {
+    allMarkers.forEach(marker => marker.addTo(map));
+  } else {
+    allMarkers.forEach(marker => map.removeLayer(marker));
+  }
+
   updateURLState();
   this.textContent = allVisible ? "Show Markers" : "Hide Markers";
   this.classList.toggle("all-on", !allVisible);
