@@ -1,7 +1,7 @@
 { 
   "markers": [
 		 {
-      "name": "Skeletons",
+      "name": "Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Skeleton Spawn",
@@ -74,7 +74,7 @@
       ]
     },
 	{
-      "name": "Elite Skeletons",
+      "name": "Elite Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-stronger.png",
@@ -111,7 +111,7 @@
       ]
     },
 	 {
-      "name": "Wolves",
+      "name": "Wolf",
       "color": "#000000",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf.png",
@@ -140,7 +140,7 @@
 	]
     },
     {
-      "name": "Dire Wolves",
+      "name": "Dire Wolf",
       "color": "#7c8079",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf-elite.png",
@@ -199,7 +199,7 @@
        ]
     },	
 	 {
-      "name": "Goblins",
+      "name": "Goblin",
       "color": "#4e9100",
       "category": "Enemies",
       "desc": "Goblin Spawn",
@@ -281,7 +281,7 @@
       ]
     },	
 		{
-      "name": "Elite Goblins",
+      "name": "Elite Goblin",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-goblin-elite.png",
@@ -461,7 +461,7 @@
             ]
     },
 	 {
-      "name": "Ogres",
+      "name": "Ogre",
       "color": "#7c8079",
       "category": "Bosses",
       "url": "images/Icons/mob-goblin-boss.png",
@@ -471,7 +471,7 @@
        ]
     },
 	 {
-      "name": "Spiders",
+      "name": "Spider",
       "color": "#808080",
       "category": "Enemies",
       "url": "images/Icons/mob-spider.png",
@@ -603,7 +603,7 @@
     },
 
     {
-      "name": "Barrels",
+      "name": "Barrel",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Barrels",
@@ -717,7 +717,7 @@
       ]
     },
     {
-      "name": "Coffins",
+      "name": "Coffin",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Coffins",
@@ -904,7 +904,7 @@
       ]
     },
     {
-      "name": "Alchemy Chests",
+      "name": "Alchemy Chest",
       "color": "#f7d97e",
       "category": "Containers",
       "url": "images/Icons/chest-alchemist.png",
@@ -1129,7 +1129,7 @@
       ]
     },
 	  {
-      "name": "Toolbelts",
+      "name": "Toolbelt",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Toolbelts",
@@ -1148,7 +1148,7 @@
       ]
     },
     {
-      "name": "Books",
+      "name": "Book",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Books",
@@ -1222,7 +1222,7 @@
       ]
     },
 	{
-      "name": "Keys",
+      "name": "Key",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Possible spawns for Keys",
@@ -1251,7 +1251,7 @@
       "desc": "Locked door that requires a certain key to enter",
       "url": "images/Icons/lockeddoor.png",
       "points":[
-	{"desc": "You need Midnight Key to exit from here","x": 277.84375, "y": 681.71875},
+	{"desc": "You need Midnight Key to extract from here","x": 277.84375, "y": 681.71875},
 	{"desc": "Requires Farm Key","x": 876.59375, "y": 603.46875},
 	{"desc": "Requires Farm Key","x": 366.875, "y": 582.15625},
 	{"desc": "Requires Farm Key","x": 261.84375, "y": 447.5},
@@ -1259,7 +1259,6 @@
 	{"desc": "Requires Twilight Key","x": 483.4375, "y": 408.625},
 	{"desc": "Requires Twilight Key","x": 834.15625, "y": 374.9375}
 	  ]
-
     },
 
     {
@@ -1291,7 +1290,7 @@
       },
 
 	{
-      "name": "Gemstones",
+      "name": "Gemstone",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Gemstones (Topaz, Sapphire, Emerald, Ruby)",
@@ -1601,7 +1600,6 @@
 	{"x": 661.90625, "y": 477.1875},
 	{"x": 735.9375, "y": 340.125},
 	{"x": 699, "y": 140.375},
-
 	{"x": 625.4375, "y": 402.0625},
        {"x": 488.0625, "y": 842.0625},
        {"x": 353.875, "y": 790.625},
@@ -1938,7 +1936,7 @@
       ]
     },
     {
-      "name": "Frogs",
+      "name": "Frog",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Frog",
@@ -1974,7 +1972,7 @@
       ]
     },
     {
-      "name": "Mushrooms",
+      "name": "Mushroom",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Mushroom",
@@ -2004,7 +2002,7 @@
       ]
     },
     {
-      "name": "Beetles",
+      "name": "Beetle",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Beetle",
@@ -2026,7 +2024,7 @@
       ]
     },
     {
-      "name": "Glowgrubs",
+      "name": "Glowgrub",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Glowgrub",
@@ -2096,7 +2094,7 @@
       ]
     },
 	{
-	"name": "Breakables",
+	"name": "Breakable",
 	"color": "#ffc0cb",
 	"category": "Misc",
 	"desc": "Boxes and barrels you can break for loot",
@@ -2236,17 +2234,17 @@
       ]
     },
     {
-      "name": "Exit",
+      "name": "Extract",
       "color": "#ffc0cb",
       "category": "Misc",
       "desc": "Exit",
       "url": "images/Icons/exit.png",
       "points": [
-        {"desc": "To exit from here, you need to pay 100 Gold coins from your inventory","x": 829.15625, "y": 192.9375},
-	{"desc": "You need Midnight Key to exit from here","x": 277.65625, "y": 683.25},
+        {"desc": "To extract from here, you need to pay 100 Gold coins from your inventory","x": 829.15625, "y": 192.9375},
+	{"desc": "You need Midnight Key to extract from here","x": 277.65625, "y": 683.25},
         {"desc": "One of the 2 random free extracts","x": 352.65625, "y": 154.59375},
         {"desc": "One of the 2 random free extracts","x": 754.03125, "y": 633.78125},
-        {"desc": "To exit from here, you need 2 Fresh Player Ears","x": 585.84375, "y": 655.96875},
+        {"desc": "To extract from here, you need 2 Fresh Player Ears","x": 585.84375, "y": 655.96875},
 	{"desc": "On the top of the highest Castle tower, Castle Key is needed to open the gate","x": 673, "y": 450}
       ]
     },

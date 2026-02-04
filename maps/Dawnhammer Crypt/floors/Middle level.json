@@ -1,7 +1,7 @@
 {
 	"markers": [
 		{
-      "name": "Skeletons",
+      "name": "Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Skeleton Spawn",
@@ -56,7 +56,7 @@
    ]
     },
 	 {
-      "name": "Spiders",
+      "name": "Spider",
       "color": "#808080",
       "category": "Enemies",
       "url": "images/Icons/mob-spider.png",
@@ -136,7 +136,7 @@
       ]
     },
 	 {
-      "name": "Alchemy Chests",
+      "name": "Alchemy Chest",
       "color": "#f7d97e",
       "category": "Containers",
       "url": "images/Icons/chest-alchemist.png",
@@ -160,7 +160,7 @@
       ]
     },
 	{
-      "name": "Coffins",
+      "name": "Coffin",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Coffins",
@@ -182,7 +182,7 @@
       ]
     },
 	{
-      "name": "Keys",
+      "name": "Key",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Possible spawns for Keys",
@@ -219,7 +219,7 @@
       ]
     },
 		 {
-      "name": "Barrels",
+      "name": "Barrel",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Barrels",
@@ -272,7 +272,7 @@
     },
 	 
 	{
-      "name": "Mushrooms",
+      "name": "Mushroom",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Mushroom",
@@ -330,7 +330,7 @@
       ]
     },
  {
-      "name": "Books",
+      "name": "Book",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Books",
@@ -434,7 +434,7 @@
     },
 	
 {
-      "name": "Gemstones",
+      "name": "Gemstone",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Gemstones (Topaz, Sapphire, Emerald, Ruby)",
@@ -507,13 +507,13 @@
       ]
     },
 	  {
-      "name": "Exit",
+      "name": "Extract",
       "color": "#ffc0cb",
       "category": "Misc",
-      "desc": "Exit",
+      "desc": "Extract",
       "url": "images/Icons/exit.png",
       "points": [
-	{"desc":"To exit from here, you need 2 Fresh Player Ears","x": 415.75, "y": 586.5}
+	{"desc":"To extract from here, you need 2 Fresh Player Ears","x": 415.75, "y": 586.5}
       ]
     }
 

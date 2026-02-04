@@ -1,7 +1,7 @@
 { 
   "markers": [
 	 {
-      "name": "Skeletons",
+      "name": "Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Skeleton Spawn",
@@ -31,7 +31,7 @@
       ]
     },
 	{
-      "name": "Elite Skeletons",
+      "name": "Elite Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-stronger.png",
@@ -58,7 +58,7 @@
     },
 
 {
-      "name": "Goblins",
+      "name": "Goblin",
       "color": "#4e9100",
       "category": "Enemies",
       "desc": "Goblin Spawn",
@@ -95,7 +95,7 @@
       ]
     },	
 	{
-      "name": "Elite Goblins",
+      "name": "Elite Goblin",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-goblin-elite.png",
@@ -158,7 +158,7 @@
       ]
     },		
  {
-      "name": "Ogres",
+      "name": "Ogre",
       "color": "#7c8079",
       "category": "Bosses",
       "url": "images/Icons/mob-goblin-boss.png",
@@ -168,7 +168,7 @@
        ]
     },
 	 {
-      "name": "Spiders",
+      "name": "Spider",
       "color": "#808080",
       "category": "Enemies",
       "url": "images/Icons/mob-spider.png",
@@ -241,7 +241,7 @@
     },
 
 {
-      "name": "Barrels",
+      "name": "Barrel",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Barrels",
@@ -296,7 +296,7 @@
         ]
       },
 	 {
-      "name": "Toolbelts",
+      "name": "Toolbelt",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Toolbelts",
@@ -457,7 +457,7 @@
     },
 
 	{
-	"name": "Breakables",
+	"name": "Breakable",
 	"color": "#ffc0cb",
 	"category": "Misc",
 	"desc": "Boxes and barrels you can break for loot",
@@ -529,7 +529,7 @@
       ]
     },
 	 {
-      "name": "Alchemy Chests",
+      "name": "Alchemy Chest",
       "color": "#f7d97e",
       "category": "Containers",
       "url": "images/Icons/chest-alchemist.png",
@@ -599,7 +599,7 @@
       ]
     },
 	 {
-      "name": "Glowgrubs",
+      "name": "Glowgrub",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Glowgrub",
@@ -622,7 +622,6 @@
 	{"x": 757.75, "y": 535.625},
 	{"x": 647.1875, "y": 198},
 	{"x": 330.5625, "y": 144.40625},
-	
 	{"x": 390.46875, "y": 768.71875},
 	{"x": 626.84375, "y": 285.1875},
 	{"x": 710.5, "y": 605.09375},
@@ -699,7 +698,7 @@
       ]
     },
 	 {
-      "name": "Mushrooms",
+      "name": "Mushroom",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Mushroom",
@@ -716,7 +715,7 @@
       ]
     },
 	 {
-      "name": "Books",
+      "name": "Book",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Books",
@@ -724,7 +723,7 @@
       "points": [
 	{"x": 746.8125, "y": 344.8125},
 	{"x": 752.84375, "y": 351.46875},
-		{"x": 803.3125, "y": 253.65625},	
+	{"x": 803.3125, "y": 253.65625},	
 	{"x": 588.25, "y": 355.28125},
 	{"image":"images/Tools/bookUnder883.png","x": 883.15625, "y": 553.765625},
 	 {"image":"images/Tools/bookUnder313.png","x": 313.0, "y": 203.125},
@@ -741,10 +740,8 @@
 	{"desc": "Other lodge items can spawn here too","image":"images/Tools/bookUnder759.png","x": 759.75, "y": 475.375}
       ]
     },
-
-
 	{
-      "name": "Keys",
+      "name": "Key",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Possible spawns for Keys",
@@ -767,7 +764,7 @@
       ]
     },
 	 {
-      "name": "Coffins",
+      "name": "Coffin",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Coffins",
@@ -823,7 +820,7 @@
     },
 
 	{
-      "name": "Gemstones",
+      "name": "Gemstone",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Gemstones (Topaz, Sapphire, Emerald, Ruby)",
@@ -901,7 +898,6 @@
 	{ "desc": "Underground in tiny cave", "x": 731.1875, "y": 202}	
       ]
     },
-
 	{
       "name": "Glowmoss",
       "color": "#f7d97e",
@@ -928,14 +924,14 @@
       ]
     },
 	{
-      "name": "Exit",
+      "name": "Extract",
       "color": "#ffc0cb",
       "category": "Misc",
-      "desc": "Exit",
+      "desc": "Extract",
       "url": "images/Icons/exit.png",
       "points": [
         {"desc": "Crypt Key is needed to open the gate","image":"images/Exit/keyCrypt12412.png", "x": 590.09375, "y": 358.46875},
-		{"desc": "You need Midnight Key to exit from here","x": 277.65625, "y": 703.0625},
+		{"desc": "You need Midnight Key to extract from here","x": 277.65625, "y": 703.0625},
 	        {"desc": "One of the 2 random free extracts","x": 352.65625, "y": 154.59375}
       ]
     }

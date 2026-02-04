@@ -1,8 +1,7 @@
 { 
   "markers": [
-	
 	 {
-      "name": "Goblins",
+      "name": "Goblin",
       "color": "#4e9100",
       "category": "Enemies",
       "desc": "Goblin Spawn",
@@ -23,7 +22,7 @@
       ]
     },
 	 {
-      "name": "Elite Goblins",
+      "name": "Elite Goblin",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-goblin-elite.png",
@@ -46,7 +45,7 @@
        ]
     },
 	    {
-      "name": "Ogres",
+      "name": "Ogre",
       "color": "#7c8079",
       "category": "Bosses",
       "url": "images/Icons/mob-goblin-boss.png",
@@ -57,7 +56,7 @@
        ]
     },
 	    {
-      "name": "Skeletons",
+      "name": "Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Skeleton Spawn",
@@ -127,7 +126,7 @@
    ]
     },
 	  {
-      "name": "Elite Skeletons",
+      "name": "Elite Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-stronger.png",
@@ -142,7 +141,7 @@
       ]
     },
 	    {
-      "name": "Spiders",
+      "name": "Spider",
       "color": "#808080",
       "category": "Enemies",
       "url": "images/Icons/mob-spider.png",
@@ -179,7 +178,7 @@
       ]
     },
   {
-      "name": "Wolves",
+      "name": "Wolf",
       "color": "#000000",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf.png",
@@ -190,7 +189,7 @@
     },
 
 	 {
-      "name": "White Wolves",
+      "name": "White Wolf",
       "color": "#7c8079",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf-elite.png",
@@ -211,7 +210,7 @@
        ]
     },
 	  {
-      "name": "Barrels",
+      "name": "Barrel",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Barrels",
@@ -262,7 +261,7 @@
         ]
       },
 	 {
-      "name": "Toolbelts",
+      "name": "Toolbelt",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Toolbelts",
@@ -434,7 +433,7 @@
     },
 
 	{
-	"name": "Breakables",
+	"name": "Breakable",
 	"color": "#ffc0cb",
 	"category": "Misc",
 	"desc": "Boxes and barrels you can break for loot",
@@ -518,7 +517,7 @@
       ]
     },
 	 {
-      "name": "Alchemy Chests",
+      "name": "Alchemy Chest",
       "color": "#f7d97e",
       "category": "Containers",
       "url": "images/Icons/chest-alchemist.png",
@@ -627,7 +626,7 @@
       ]
     },
 	 {
-      "name": "Mushrooms",
+      "name": "Mushroom",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Mushroom",
@@ -644,7 +643,7 @@
       ]
     },
 	 {
-      "name": "Books",
+      "name": "Book",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Books",
@@ -669,7 +668,7 @@
 
 
 	{
-      "name": "Keys",
+      "name": "Key",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Possible spawns for Keys",
@@ -691,7 +690,7 @@
       ]
     },
 	 {
-      "name": "Coffins",
+      "name": "Coffin",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Coffins",
@@ -731,7 +730,7 @@
       ]
     },
 	 {
-      "name": "Glowgrubs",
+      "name": "Glowgrub",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Glowgrub",
@@ -754,7 +753,7 @@
     },
 
 	{
-      "name": "Gemstones",
+      "name": "Gemstone",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Gemstones (Topaz, Sapphire, Emerald, Ruby)",
@@ -857,10 +856,10 @@
     },
 
 	{
-      "name": "Exit",
+      "name": "Extract",
       "color": "#ffc0cb",
       "category": "Misc",
-      "desc": "Exit",
+      "desc": "Extract",
       "url": "images/Icons/exit.png",
       "points": [
         {"desc": "Crypt Key is needed to open the gate","image":"images/Exit/keyCrypt12412.png", "x": 590.09375, "y": 358.46875}

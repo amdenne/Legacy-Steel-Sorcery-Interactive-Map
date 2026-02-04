@@ -2,7 +2,7 @@
   "markers": [
 		
 	{
-      "name": "Bandits",
+      "name": "Bandit",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Bandit Spawn",
@@ -21,10 +21,8 @@
 	{"x":431.5,"y":167.25},
 	{"x":435.375,"y":170.625},
 	{"x": 358.96875, "y": 299.59375},
-
 	{"x": 497.21875, "y": 227.1875},
 	{"x": 574, "y": 200.96875},
-
 	{"x": 806.46875, "y": 337.71875},
 	{"x": 823.90625, "y": 325.3125},
 	{"x":797.5,"y":314},
@@ -37,7 +35,6 @@
 	{"x": 510.375, "y": 569.1875},
 	{"x": 530.90625, "y": 543.1875},
 	{"x": 550.25, "y": 545.125},
-
 	{"x": 488.59375, "y": 680.03125},
 	{"x": 775.375, "y": 781.78125},
 	{"x": 677.21875, "y": 559.125},
@@ -52,19 +49,20 @@
       ]
     },
 	{
-      "name": "Bandit Lord",
+      "name": "Elite Bandit",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Bandit Lord Spawn",
       "url": "images/Icons/bandit-elite.png",
       "points": [
+	{"x": 41.25, "y": 470.5},
 	{"x":298.75,"y":180.625},
 	{"x": 497, "y": 687.25},
 	{"x":433.375,"y":174.25}
       ]
     },
 	 {
-      "name": "Goblins",
+      "name": "Goblin",
       "color": "#4e9100",
       "category": "Enemies",
       "desc": "Goblin Spawn",
@@ -235,7 +233,7 @@
       ]
     },
 	 {
-      "name": "Wolves",
+      "name": "Wolf",
       "color": "#000000",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf.png",
@@ -307,7 +305,7 @@
 	]
     },
 	 {
-      "name": "Dire Wolves",
+      "name": "Dire Wolf",
       "color": "#7c8079",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf-elite.png",
@@ -320,7 +318,7 @@
        ]
     },
  {
-      "name": "Spiders",
+      "name": "Spider",
       "color": "#808080",
       "category": "Enemies",
       "url": "images/Icons/mob-spider.png",
@@ -631,7 +629,7 @@
       ]
     },
 	{
-      "name": "Frogs",
+      "name": "Frog",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Frog",
@@ -661,7 +659,7 @@
       ]
     },
 	{
-      "name": "Glowgrubs",
+      "name": "Glowgrub",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Glowgrub",
@@ -679,7 +677,7 @@
       ]
     },
 	{
-      "name": "Beetles",
+      "name": "Beetle",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Beetle",
@@ -692,7 +690,7 @@
 	      ]
     },
 	 {
-      "name": "Barrels",
+      "name": "Barrel",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Barrels",
@@ -805,7 +803,7 @@
       ]
     },
 	 {
-      "name": "Alchemy Chests",
+      "name": "Alchemy Chest",
       "color": "#f7d97e",
       "category": "Containers",
       "url": "images/Icons/chest-alchemist.png",
@@ -931,6 +929,7 @@
         "desc": "Pumpkin food item",
         "url": "images/Icons/pumpkin.png",
         "points": [
+	{"x":448.75,"y":333.5},
 	{"x":615.375,"y":276.375},
 	{"x":630.875,"y":263.875},
 	{"x":181.375,"y":540.875},
@@ -949,6 +948,18 @@
 	{"x":513.375,"y":327.625},
 	{"x":501.125,"y":299.25},
 	{"x":469.625,"y":298}
+	]
+      },
+	{
+        "name": "Carrot",
+        "color": "#f7d97e",
+        "category": "Collectables",
+        "desc": "Carrot food item",
+        "url": "images/Icons/carrot.png",
+        "points": [
+	{"x":192.875,"y":387.875},
+	{"x":191.375,"y":369.875},
+	{"x":213.375,"y":385.75}
 	]
       },
 
@@ -979,7 +990,7 @@
     },
 
 {
-      "name": "Gemstones",
+      "name": "Gemstone",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Gemstones (Topaz, Sapphire, Emerald, Ruby)",
@@ -1020,6 +1031,18 @@
 	{"x": 320.34375, "y": 670.75},
 	{"x":309.625,"y":230.75},
        {"x":838.875,"y":494.5}
+      ]
+    },
+	 {
+      "name": "Extract",
+      "color": "#ffc0cb",
+      "category": "Misc",
+      "desc": "Exit",
+      "url": "images/Icons/exit.png",
+      "points": [
+        {"x":92.25,"y":428.625},
+	{"x":672.375,"y":152.25},
+	{"x":927,"y":829.75}
       ]
     }
 

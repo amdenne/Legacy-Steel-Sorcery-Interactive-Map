@@ -1040,16 +1040,16 @@
       ]
     },
  {
-      "name": "Exit",
+      "name": "Extract",
       "color": "#ffc0cb",
       "category": "Misc",
-      "desc": "Exit",
+      "desc": "Extract",
       "url": "images/Icons/exit.png",
       "points": [
 	{"x": 874.0625, "y": 517.5},
 	{"x": 104.46875, "y": 500.375},
-	{"x": 426.15625, "y": 379.71875},
-	{"desc":"To exit from here, you need 2 Fresh Player Ears","x": 415.75, "y": 586.5},
+	{"desc": "Sewer extract","x": 426.15625, "y": 379.71875},
+	{"desc":"To extract from here, you need 2 Fresh Player Ears","x": 415.75, "y": 586.5},
 	{"desc": "Stone Cipher extract","x": 690.21875, "y": 604.59375}
 
       ]

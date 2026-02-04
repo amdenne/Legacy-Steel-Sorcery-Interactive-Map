@@ -1,7 +1,7 @@
 { 
   "markers": [
     {
-      "name": "Goblins",
+      "name": "Goblin",
       "color": "#4e9100",
       "category": "Enemies",
       "desc": "Goblin Spawn",
@@ -31,7 +31,6 @@
         {"desc": "Goblin Bomber","x": 306.8125, "y": 382.125},
         {"desc": "Goblin Bruiser", "x": 297.45, "y": 397.94 },
 	{"desc": "Goblin Slinger","x": 336.5, "y": 462.8125},
- 
         { "x": 357.14, "y": 384.19 },
         {"x": 361.125, "y": 393.375},
         {"desc": "Goblin Bomber", "x": 377.42, "y": 403.46 },
@@ -82,8 +81,7 @@
 	{"x": 489.25, "y": 766.25},
 	{"x": 376.5, "y": 152.125},
 	{"x": 369.75, "y": 147.625},
-	{"x": 353.5, "y": 148.125},
-	
+	{"x": 353.5, "y": 148.125},	
 	{"x": 354.375, "y": 181.375},
 	{"x": 361, "y": 182.5},
 	{"x": 507.125, "y": 280.75},
@@ -127,7 +125,7 @@
       ]
     },
     {
-      "name": "Elite Goblins",
+      "name": "Elite Goblin",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-goblin-elite.png",
@@ -145,7 +143,7 @@
     },
 	
     {
-      "name": "Skeletons",
+      "name": "Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Skeleton Spawn",
@@ -390,7 +388,7 @@
     },
     
     {
-      "name": "Elite Skeletons",
+      "name": "Elite Skeleton",
       "color": "#f5fced",
       "category": "Enemies",
       "url": "images/Icons/mob-stronger.png",
@@ -435,7 +433,7 @@
       ]
     },
     {
-      "name": "Wolves",
+      "name": "Wolf",
       "color": "#000000",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf.png",
@@ -535,7 +533,7 @@
 	]
     },
     {
-      "name": "Dire Wolves",
+      "name": "Dire Wolf",
       "color": "#7c8079",
       "category": "Enemies",
       "url": "images/Icons/mob-wolf-elite.png",
@@ -604,7 +602,7 @@
       ]
     },
     {
-      "name": "Wooden Barrel",
+      "name": "Barrel",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Wooden Barrel",
@@ -653,7 +651,6 @@
         {"x": 488.25, "y": 593.25},
         {"x": 856.75, "y": 555.8125},
         {"x": 859.25, "y": 471},
-
         {"x": 700.4375, "y": 600.375},
         {"x": 578.65625, "y": 648.0625},
         {"x": 773, "y": 348},
@@ -720,7 +717,7 @@
       ]
     },
     {
-      "name": "Coffins",
+      "name": "Coffin",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Coffins",
@@ -897,7 +894,7 @@
       ]
     },
     {
-      "name": "Alchemy Chests",
+      "name": "Alchemy Chest",
       "color": "#f7d97e",
       "category": "Containers",
       "url": "images/Icons/chest-alchemist.png",
@@ -1055,7 +1052,6 @@
 	{"image":"images/Chests/armorChest548.png","x": 548.328125, "y": 511.515625},
 	{"image":"images/Chests/armorChest613.png","x": 613.703125, "y": 480.625},
 	{"x": 362.375, "y": 397.375},
-
 	{"x": 648.125, "y": 371.0625},
 	{"desc": "2nd floor inside","image":"images/Chests/armorChest735.png","x": 736.0, "y": 344.5},
 	{"x": 719.875, "y": 372.6875},
@@ -1128,7 +1124,7 @@
       ]
     },
 	  {
-      "name": "Toolbelts",
+      "name": "Toolbelt",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Toolbelts",
@@ -1148,7 +1144,7 @@
       ]
     },
     {
-      "name": "Books",
+      "name": "Book",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Books",
@@ -1220,7 +1216,7 @@
       ]
     },
 	{
-      "name": "Keys",
+      "name": "Key",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Possible spawns for Keys",
@@ -1246,7 +1242,7 @@
     },
 
 	{
-      "name": "Gemstones",
+      "name": "Gemstone",
       "color": "#f7d97e",
       "category": "Dropped Items",
       "desc": "Gemstones (Topaz, Sapphire, Emerald, Ruby)",
@@ -1781,7 +1777,7 @@
       ]
     },
     {
-      "name": "Frogs",
+      "name": "Frog",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Frog",
@@ -1817,7 +1813,7 @@
       ]
     },
     {
-      "name": "Mushrooms",
+      "name": "Mushroom",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Mushroom",
@@ -1845,7 +1841,7 @@
       ]
     },
     {
-      "name": "Beetles",
+      "name": "Beetle",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Beetle",
@@ -1867,7 +1863,7 @@
       ]
     },
     {
-      "name": "Glowgrubs",
+      "name": "Glowgrub",
       "color": "#f7d97e",
       "category": "Collectables",
       "desc": "Glowgrub",
@@ -1985,7 +1981,7 @@
     },
 
 	{
-	"name": "Breakables",
+	"name": "Breakable",
 	"color": "#ffc0cb",
 	"category": "Misc",
 	"desc": "Boxes and barrels you can break for loot",
@@ -2160,16 +2156,16 @@
 	  ]
     },
     {
-      "name": "Exit",
+      "name": "Extract",
       "color": "#ffc0cb",
       "category": "Misc",
       "desc": "Exit",
       "url": "images/Icons/exit.png",
       "points": [
-        {"desc": "To exit from here, you need to pay 100 Gold coins from your inventory","x": 223.75, "y": 285.25},
+        {"desc": "To extract from here, you need to pay 100 Gold coins from your inventory","x": 223.75, "y": 285.25},
         {"desc": "One of the 2 random free extracts", "x": 311.5, "y": 777.25},
         {"desc": "One of the 2 random free extracts","x": 850.5, "y": 431},
-        {"desc": "To exit from here, you need to lower the bridge with Goblin Lever that can drop from any Goblin","x": 723.5, "y": 126.75},
+        {"desc": "To extract from here, you need to lower the bridge with Goblin Lever that can drop from any Goblin","x": 723.5, "y": 126.75},
 	{"desc": "On the top of the highest Castle tower, Castle Extraction Key is needed to open the gate","x": 673, "y": 450}
       ]
     },

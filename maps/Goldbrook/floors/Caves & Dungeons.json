@@ -1,7 +1,7 @@
 { 
   "markers": [
 	 {
-      "name": "Goblins",
+      "name": "Goblin",
       "color": "#4e9100",
       "category": "Enemies",
       "desc": "Goblin Spawn",
@@ -11,7 +11,7 @@
       ]
     },
 	{
-      "name": "Bandits",
+      "name": "Bandit",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Bandit Spawn",
@@ -26,7 +26,7 @@
       ]
     },
 	{
-      "name": "Bandit Lord",
+      "name": "Elite Bandit",
       "color": "#f5fced",
       "category": "Enemies",
       "desc": "Bandit Lord Spawn",
@@ -37,7 +37,7 @@
       ]
     },
 	{
-      "name": "Spiders",
+      "name": "Spider",
       "color": "#808080",
       "category": "Enemies",
       "url": "images/Icons/mob-spider.png",
@@ -56,7 +56,7 @@
       "url": "images/Icons/mob-spider-elite.png",
       "desc": "Big Spider",
       "points": [
-		{"x": 123, "y": 327.5},
+	{"x": 123, "y": 327.5},
 	{"x": 666.3412795810585, "y": 351.2965990546098},
 	{"x": 815.75, "y": 666},
 	{"x": 778.25, "y": 617.5}
@@ -125,7 +125,7 @@
     },
 
  {
-      "name": "Alchemy Chests",
+      "name": "Alchemy Chest",
       "color": "#f7d97e",
       "category": "Containers",
       "url": "images/Icons/chest-alchemist.png",
@@ -172,9 +172,7 @@
       "points": [
 	{"desc": "Inside and around the room","x":815.5,"y":671.75}
       ]
-    },
-
-	
+    },	
  {
       "name": "Minecart",
       "color": "#c49300",
@@ -187,7 +185,7 @@
     },
 
  {
-      "name": "Barrels",
+      "name": "Barrel",
       "color": "#c49300",
       "category": "Containers",
       "desc": "Barrels",
