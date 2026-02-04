@@ -433,9 +433,8 @@
       "points": [
 	{"image":"images/Ores/bloodsteel489.png","x": 489.03125, "y": 355.46875},
 	{"image":"images/Ores/bloodsteel501.png","desc":"On the bottom floor","x": 501.40625, "y": 465.8125},
-	{"image":"images/Ores/bloodsteel255.png","x": 255.0, "y": 426.3125},
-	{"x": 412.03125, "y": 351.71875},
-	{"x": 810.21875, "y": 530.46875}
+
+	{"x": 412.03125, "y": 351.71875}
             ]
     },
 	 {
@@ -445,6 +444,9 @@
       "category": "Ores",
       "desc": "Mithril, Bloodsteel, Iron or Copper",
       "points": [
+	{"image":"images/Ores/bloodsteel255.png","x": 255.0, "y": 426.3125},
+	{"x": 810.21875, "y": 530.46875},
+	{"desc":"Next to library","x":650,"y":435.875},
 	{"desc":"Bottom floor","x": 226.4375, "y": 436.8125}
 	]
     },

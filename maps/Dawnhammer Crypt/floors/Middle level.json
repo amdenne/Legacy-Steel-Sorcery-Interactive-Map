@@ -375,6 +375,16 @@
 	{"image":"images/Collectables/cryptstone119.png","x": 119.1875, "y": 593.03125}
       ]
     },
+	 {
+      "name": "Mithril Ore or lower",
+      "color": "#c44b00",
+      "url": "images/Icons/ore-mithril.png",
+      "category": "Ores",
+      "desc": "Mithril, Bloodsteel, Iron or Copper",
+      "points": [
+	{"desc":"Next to library","x":650,"y":435.875}
+	]
+    },
 	{
       "name": "Locked Door",
       "color": "#f7d97e",
